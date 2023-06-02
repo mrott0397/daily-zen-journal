@@ -14,19 +14,19 @@ function AppNavbar({ currentPage, handlePageChange}) {
 <nav>
   
   <a href="#Profile"
-  onClick={() => handlePageChange(Profile)}
+  onClick={() => handlePageChange("Profile")}
   className={
     currentPage === "Profile" ? "nav-link active" : "nav-link"
   }
   >Profile</a>
   <a href="#Journal"
-  onClick={() => handlePageChange(Journal)}
+  onClick={() => handlePageChange("Journal")}
   className={
     currentPage === "Journal" ? "nav-link active" : "nav-link"
   }
   >Journal</a>
   <a href="#Home-page"
-  onClick={() => handlePageChange(Homepage)}
+  onClick={() => handlePageChange("Homepage")}
   className={
     currentPage === "Homepage" ? "nav-link active" : "nav-link"
   }
