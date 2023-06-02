@@ -2,7 +2,7 @@ function Journal() {
     return (
         <div>
         <br />
-        {/* <p>Journal</p> */}
+        <p>Journal</p>
         <br />
         </div>
         
