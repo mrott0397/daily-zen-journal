@@ -16,8 +16,7 @@ function App() {
     <section id="homepage" className="page-section">
     <Homepage />
     </section>
-    <Journal />
-    <Footer />
+       <Footer />
   </main>
 </div>
 
