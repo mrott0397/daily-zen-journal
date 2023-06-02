@@ -1,6 +1,6 @@
 import Nav from "./Nav";
 
-function Header() {
+function Header () {
     return (
  <header>
 <Nav /> <h1>Daily Zen Journal </h1>
