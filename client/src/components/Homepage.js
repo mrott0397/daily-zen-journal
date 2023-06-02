@@ -5,7 +5,8 @@ import Header from "./Header";
 import SignupForm from "./SignupForm";
 import './homepage.css'
 
-function Homepage() {
+function Homepage(props) {
+  const { currentPage, handlePageChange } = props;
   return (
     <div>
     <br />

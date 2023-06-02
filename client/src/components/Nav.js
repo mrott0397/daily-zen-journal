@@ -5,13 +5,34 @@ import SignUpForm from './SignupForm';
 import LoginForm from './Logincard';
 
 import Auth from '../utils/auth';
-function AppNavbar() {
+import Homepage from './Homepage';
+import Journal from '../pages/Journal';
+import Profile from '../pages/Profile';
+function AppNavbar({ currentPage, handlePageChange}) {
     return (
+        <>
 <nav>
-  <a href="#Profile">Profile</a>
-  <a href="#Journal">Journal</a>
-  <a href="#Home-page">Home</a>
+  
+  <a href="#Profile"
+  onClick={() => handlePageChange("Profile")}
+  className={
+    currentPage === "Profile" ? "nav-link active" : "nav-link"
+  }
+  >Profile</a>
+  <a href="#Journal"
+  onClick={() => handlePageChange("Journal")}
+  className={
+    currentPage === "Journal" ? "nav-link active" : "nav-link"
+  }
+  >Journal</a>
+  <a href="#Home-page"
+  onClick={() => handlePageChange("Homepage")}
+  className={
+    currentPage === "Homepage" ? "nav-link active" : "nav-link"
+  }
+     >Home</a>
 </nav> 
+</>
     );
     }
 
