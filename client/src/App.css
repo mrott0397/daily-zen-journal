@@ -48,6 +48,9 @@ nav a {
 main {
   max-width: 90%;
   margin: 20px auto 45px auto;
+  text-align: right
+
+  
 }
 .page-section {
   display: flex;
