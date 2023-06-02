@@ -25,7 +25,7 @@ mutation AddUser($username: String!, $email: String!, $password: String!) {
 
 export const SAVE_ENTRY = gql`
   mutation SaveEntry($thoughtData: JournalInput) {
-    saveEntry {
+    saveEntry(thoughtData: $thoughtData) {
         _id
         username
         entryCount
@@ -35,7 +35,7 @@ export const SAVE_ENTRY = gql`
         }
       }
     }
-  }
+  
 `;
 
 export const REMOVE_ENTRY = gql`
