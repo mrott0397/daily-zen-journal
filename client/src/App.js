@@ -1,10 +1,11 @@
 import "./App.css";
-import React from "react";
+import React, {useState} from "react";
 // import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Header";
 // import Journal from "./components/Journal";
 import Footer from "./components/Footer";
 import Homepage from "./components/Homepage";
+import Profile from "./pages/Profile";
 import {
   ApolloClient,
   InMemoryCache,
@@ -12,6 +13,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import Journal from "./pages/Journal";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -35,15 +37,31 @@ const client = new ApolloClient({
 
 
 function App() {
+  const [currentPage, setCurrentPage] = useState("Homepage");
+
+  const renderPage = () => {
+    if (currentPage === "Journal") {
+      return <Journal />;
+    }
+    if (currentPage === "Profile") {
+      return <Profile />;
+    }
+    return <Homepage />;
+    
+  };
+  const handlePageChange = (page) => setCurrentPage(page);
+
   return (
     <ApolloProvider client={client}>
       <div className="App">
         <div>
-          <Header />
+          <Header currentPage={currentPage} handlePageChange={handlePageChange} />
           <div className="cover-image"></div>
           <main>
             <section id="homepage" className="page-section">
-              <Homepage />
+              {renderPage()}
+              {/* <Homepage />
+              <Profile /> */}
             </section>
             <Footer />
           </main>
