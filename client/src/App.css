@@ -3,7 +3,7 @@
 }
 header {
   display: flex;
-  background-color: #ff9e9e;
+  background-color: #bf6c97;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -11,7 +11,7 @@ header {
 }
 
 header h1 {
-  background-color: #ff9e9e;
+  background-color: #bf6c97;
   color: black;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -22,11 +22,11 @@ header nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: #ff9e9e;
+  background-color: #bf6c97;
 }
 /* targeting all anchors of the nav  */
 nav a {
-  background-color: #ff9e9e;
+  background-color: #bf6c97;
   margin-right: 15px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: medium;
@@ -159,7 +159,7 @@ a:hover {
 @media screen and (max-width: 992px) {
   /* Change the header color */
   header {
-    background: #ff9e9e;
+    background: #bf6c97;
   }
 }
 
@@ -174,16 +174,16 @@ a:hover {
   }
   /* Change the header color */
   header {
-    background: #ff9e9e;
+    background: #bf6c97;
   }
   header h1 {
-    background: #ff9e9e;
+    background: #bf6c97;
   }
   header nav {
-    background: #ff9e9e;
+    background: #bf6c97;
   }
   header nav a {
-    background: #ff9e9e;
+    background: #bf6c97;
   }
 }
 @media screen and (max-width: 667px) {
