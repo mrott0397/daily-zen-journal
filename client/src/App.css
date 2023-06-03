@@ -1,5 +1,5 @@
 * {
-  background-color: #567d89;
+  background-color: #336e90;
 }
 header {
   display: flex;
@@ -52,6 +52,58 @@ main {
 
   
 }
+.form-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-container .form-wrapper {
+  flex-basis: 48%; /* Adjust the width as needed */
+}
+
+.journal {
+  padding: 5px 20px;
+}
+
+.journal fieldset {
+  margin: 20px 0;
+}
+
+.journal-entry-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.form-button {
+  padding: 8px 16px;
+  background-color: white;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #45a049;
+}
+
 .page-section {
   display: flex;
   flex-direction: row;
