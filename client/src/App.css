@@ -1,4 +1,4 @@
-* {
+body {
   background-color: #567d89;
 }
 header {
@@ -35,7 +35,7 @@ nav a {
 }
 /* text directions overides whats already been styled */
 
-.cover-image {
+.cover {
   background-image: url(./assets/LoFi-background.jpeg);
   background-position: 80% 20%;
   background-size: cover;
