@@ -48,7 +48,7 @@ nav a {
 main {
   max-width: 90%;
   margin: 20px auto 45px auto;
-  text-align: right
+  
 
   
 }
@@ -74,6 +74,7 @@ main {
   flex-direction: column;
   max-width: 400px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .form-label {
@@ -91,10 +92,10 @@ main {
   resize: vertical;
 }
 
-.form-button {
+.form-submit {
   padding: 8px 16px;
-  background-color: white;
-  color: white;
+  background-color:  #bf6c97;
+  color: black;
   border: none;
   border-radius: 4px;
   cursor: pointer;

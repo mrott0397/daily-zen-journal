@@ -1,44 +1,50 @@
 import React, { useState } from 'react';
 
 function JournalEntryForm() {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+    const handleSubmit = (event) => {
+        event.preventDefault();
 
-    // Here, you can perform any additional logic you need,
-    // such as saving the journal entry to a database.
+        // Here, you can perform any additional logic you need,
+        // such as saving the journal entry to a database.
 
-    // Reset the form
-    setTitle('');
-    setContent('');
-  };
+        // Reset the form
+        setTitle('');
+        setContent('');
+    };
 
-  return (
-    <form onSubmit={handleSubmit} className="journal-entry-form">
-      <label className='form-label'>
-        Title:
-        <input
-          type="text"
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
-          required
-          className='form-input'
-        />
-      </label>
-      <label className='form-label'>
-        Content:
-        <textarea
-          value={content}
-          onChange={(event) => setContent(event.target.value)}
-          required
-            className='form-textarea'
-        />
-      </label>
-      <button type="submit" className='form-submit'>Submit</button>
-    </form>
-  );
+    return (
+        <div className='journal-entry-form-container-fluid'>
+            <div className='row'>
+                <form onSubmit={handleSubmit} className="journal-entry-form col">
+                    <h1>Journal Entry of the Day</h1>
+                    <label className='form-label'>
+                        Title:
+                        <input
+                            type="text"
+                            value={title}
+                            onChange={(event) => setTitle(event.target.value)}
+                            required
+                            className='form-input'
+                        />
+                    </label>
+                    <label className='form-label'>
+                        Content:
+                        <textarea
+                            value={content}
+                            onChange={(event) => setContent(event.target.value)}
+                            required
+                            className='form-textarea'
+                        />
+                    </label>
+                    <button type="submit" className='form-submit'>Submit</button>
+                </form>
+                {/* PROMPTS HERE? */}
+            </div>
+        </div>
+    );
 }
 
 export default JournalEntryForm;
