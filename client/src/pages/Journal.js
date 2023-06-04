@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Prompts from '../components/Prompts';
 
 function JournalEntryForm() {
     const [title, setTitle] = useState('');
@@ -16,9 +17,18 @@ function JournalEntryForm() {
     };
 
     return (
-        <div className='journal-entry-form-container-fluid'>
+        
+        <div className='journal-entry-form container-fluid'>
             <div className='row'>
-                <form onSubmit={handleSubmit} className="journal-entry-form col">
+                <div className='col-lg-6 flex-column justify-content-center align-items-center'>
+
+                    <div className="journal-prompts textcenter">
+                        <Prompts />
+            
+                    </div>
+                </div>
+                <form onSubmit={handleSubmit} className="journal-entry-form">
+                    <div  />
                     <h1>Journal Entry of the Day</h1>
                     <label className='form-label'>
                         Title:
@@ -36,12 +46,12 @@ function JournalEntryForm() {
                             value={content}
                             onChange={(event) => setContent(event.target.value)}
                             required
-                            className='form-textarea'
+                            className='form-textarea larger-textarea'
                         />
                     </label>
                     <button type="submit" className='form-submit'>Submit</button>
                 </form>
-                {/* PROMPTS HERE? */}
+                <div />
             </div>
         </div>
     );

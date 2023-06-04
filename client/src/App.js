@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Homepage from "./components/Homepage";
 import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
+import Prompts from "./components/Prompts";
 import {
   ApolloClient,
   InMemoryCache,
