@@ -1,10 +1,11 @@
 import "./App.css";
 import React, {useState} from "react";
-// import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Header from "./components/Header";
 // import Journal from "./components/Journal";
 import Footer from "./components/Footer";
 import Homepage from "./components/Homepage";
+import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
 import {
   ApolloClient,
@@ -38,36 +39,39 @@ const client = new ApolloClient({
 
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("Homepage");
+  // const [currentPage, setCurrentPage] = useState("Homepage");
 
-  const renderPage = () => {
-    if (currentPage === "Journal") {
-      return <Journal />;
-    }
-    if (currentPage === "Profile") {
-      return <Profile />;
-    }
-    return <Homepage />;
-    
-  };
-  const handlePageChange = (page) => setCurrentPage(page);
+  // const renderPage = () => {
+  //   if (currentPage === "Journal") {
+  //     return <Journal />;
+  //   }
+  //   if (currentPage === "Profile") {
+  //     return <Profile />;
+  //   }
+  //     return <Homepage />;
+  // };
+
+  
+  // const handlePageChange = (page) => setCurrentPage(page);
 
   return (
     <ApolloProvider client={client}>
-      <div className="App">
-        <div>
-          <Header currentPage={currentPage} handlePageChange={handlePageChange} />
-          <div className="cover-image"></div>
-          <main>
-            <section id="homepage" className="page-section">
-              {renderPage()}
-              {/* <Homepage />
-              <Profile /> */}
-            </section>
-            <Footer />
-          </main>
-        </div>
-      </div>
+      <Router >
+        <>
+          <Header />
+          {/* <Nav/> */}
+            <Routes>
+            {/* <Route path="/" element={<Homepage />} /> */}
+            <Route path="/" element={<Homepage />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/saved" element={<Journal />} />
+            {/* <Route
+              path="*"
+              element={<h1 className="display-2">Wrong page!</h1>}
+            /> */}
+          </Routes>
+        </>
+      </Router>
     </ApolloProvider>
   );
 }

@@ -15,7 +15,13 @@ function Homepage(props) {
     <br />
     <h2 style={{ textAlign: 'center'}}>Sign up or log in to get started!</h2>
     <br />
-    <div className = "form-container">
+    <div className="container">
+      <div className='cover'>
+      </div>
+      <div>
+      “Wellness starts with a positive mindset and a commitment to change.” - Unknown
+      </div>
+    {/* <div className = "form-container">
     <div className = "form-wrapper" />
     <h3 style ={{ backgroundColor: '#bf6c97'}}>Log In Here</h3>
     <LoginForm />
@@ -23,6 +29,7 @@ function Homepage(props) {
     <div className = "form-wrapper" />
     <h3 style ={{ backgroundColor: '#bf6c97'}}>Sign Up Here</h3>
     <SignupForm />
+  </div> */}
   </div>
   </div>
   );
