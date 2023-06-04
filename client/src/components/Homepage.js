@@ -23,11 +23,11 @@ function Homepage(props) {
       </div>
     {/* <div className = "form-container">
     <div className = "form-wrapper" />
-    <h3 style ={{ backgroundColor: 'pink'}}>Log In Here</h3>
+    <h3 style ={{ backgroundColor: '#bf6c97'}}>Log In Here</h3>
     <LoginForm />
     <div />
     <div className = "form-wrapper" />
-    <h3 style ={{ backgroundColor: 'pink'}}>Sign Up Here</h3>
+    <h3 style ={{ backgroundColor: '#bf6c97'}}>Sign Up Here</h3>
     <SignupForm />
   </div> */}
   </div>
