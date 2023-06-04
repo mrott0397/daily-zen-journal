@@ -1,4 +1,4 @@
-* {
+body {
   background-color: #336e90;
 }
 header {
@@ -91,6 +91,9 @@ main {
   border-radius: 4px;
   resize: vertical;
 }
+.larger-textarea {
+  height: 200px; /* Adjust the value as needed */
+}
 
 .form-submit {
   padding: 8px 16px;
@@ -103,6 +106,17 @@ main {
 
 .form-button:hover {
   background-color: #45a049;
+}
+
+.cute-textbox {
+  background-color: #bf6c97;
+  padding: 8px;
+  margin-top: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 14px;
 }
 
 .page-section {
