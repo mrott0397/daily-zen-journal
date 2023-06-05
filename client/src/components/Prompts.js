@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const  SeededPrompts = () => {
   const prompts = [
@@ -11,6 +11,10 @@ const  SeededPrompts = () => {
 
   const [randomPrompt, setRandomPrompt] = useState('');
 
+  useEffect(() => {
+    generatePrompt();
+    }, []);
+
   const generatePrompt = () => {
     const randomPrompt = [Math.floor(Math.random() * prompts.length)];
     const selectedPrompt = prompts[randomPrompt];
@@ -20,7 +24,7 @@ const  SeededPrompts = () => {
   return (
     <div className='textcenter'>
       <CuteTextBox randomPrompt={randomPrompt} />
-      <button onClick={generatePrompt}>Generate Prompt</button>
+      <button onClick={generatePrompt}>Generate New Prompt</button>
     </div>
   );
   function CuteTextBox({ randomPrompt }) {
