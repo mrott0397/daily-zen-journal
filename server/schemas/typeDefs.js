@@ -3,6 +3,7 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     input JournalInput {
         entryId: ID
+        title: String
         thoughts: String
     }
     type User  {
@@ -15,6 +16,7 @@ const typeDefs = gql`
 
     type Journal {
         entryId: ID
+        title: String
         thoughts: String
     }
 
