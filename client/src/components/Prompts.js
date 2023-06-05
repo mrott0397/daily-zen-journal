@@ -18,7 +18,7 @@ const  SeededPrompts = () => {
   };
 
   return (
-    <div>
+    <div className='textcenter'>
       <CuteTextBox randomPrompt={randomPrompt} />
       <button onClick={generatePrompt}>Generate Prompt</button>
     </div>
