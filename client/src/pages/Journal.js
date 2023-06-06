@@ -3,7 +3,7 @@ import Prompts from '../components/Prompts';
 import { SAVE_ENTRY } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 
-function JournalEntryForm( { onEntrySubmit }) {
+function JournalEntryForm() {
     const [title, setTitle] = useState('');
     const [thoughts, setContent] = useState('');
     const [saveEntry, { error }] = useMutation(SAVE_ENTRY);
@@ -27,14 +27,14 @@ function JournalEntryForm( { onEntrySubmit }) {
             } catch (err) {
                 console.error(err);
             }
-            onEntrySubmit(entryData);
+            
 
-            setTitle('');
-            setContent('');
     
         // };
 
         // Reset the form
+        // setTitle('');
+        // setContent('');
     };
 
 
