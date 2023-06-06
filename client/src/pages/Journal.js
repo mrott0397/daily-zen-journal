@@ -3,6 +3,8 @@ import Prompts from '../components/Prompts';
 import { SAVE_ENTRY } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 
+
+
 function JournalEntryForm() {
     const [title, setTitle] = useState('');
     const [thoughts, setContent] = useState('');
@@ -20,9 +22,8 @@ function JournalEntryForm() {
                 thoughts: thoughts,
             };
             try {
-                console.log(entryData);
                 await saveEntry({
-                    variables: { title: entryData.title, thoughts: entryData.thoughts },
+                    variables: { entryData },
                 });
             } catch (err) {
                 console.error(err);
