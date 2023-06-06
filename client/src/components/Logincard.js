@@ -50,7 +50,7 @@ const LoginForm = () => {
   return (
     <>
       <div className='signin-image'>
-        <image src={signInImage} alt='sign in' />
+        <image src={signInImage} alt='sign in' className='signin-image' />
       </div>
       <Form noValidate validated={validated} className='signin' onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>

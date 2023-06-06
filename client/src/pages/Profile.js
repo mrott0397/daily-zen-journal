@@ -5,9 +5,11 @@ import { useMutation, useQuery } from "@apollo/client";
 import { REMOVE_ENTRY} from "../utils/mutations";
 import { removeEntryId } from "../utils/localStorage";
 import { QUERY_ME } from "../utils/queries";
+import JournalEntryForm from "./Journal";
 
 
 const Profile = () => {
+  
   const { loading, data } = useQuery(QUERY_ME);
   const [RemoveEntry, { error }] = useMutation(REMOVE_ENTRY);
   // const thoughts = data?.me.savedThoughts || [];
@@ -35,6 +37,7 @@ const Profile = () => {
     return <h2>LOADING...</h2>;
   }
 console.log(userData)
+
   return (
     <>
       <div fluid="true" className="text-light bg-dark p-5">
@@ -51,24 +54,24 @@ console.log(userData)
             : "You have no saved entries!"}
         </h2>
         <Row>
-          {userData.savedEntries?.map((entry) => {
+          {userData.savedEntries?.map((entryData) => {
             return (
               <Col md="4">
-                <Card key={entry.entryId} border="dark">
-                  {entry.image ? (
+                <Card key={entryData.entryDataId} border="dark">
+                  {entryData.image ? (
                     <Card.Img
-                      src={entry.image}
-                      alt={`The cover for ${entry.title}`}
+                      src={entryData.image}
+                      alt={`The cover for ${entryData.title}`}
                       variant="top"
                     />
                   ) : null} 
                   <Card.Body>
-                    <Card.Title>{entry.title}</Card.Title>
+                    <Card.Title>{entryData.title}</Card.Title>
                     {/* <p className="small">Authors: {entry.authors}</p> */}
-                    <Card.Text>{entry.thoughts}</Card.Text>
+                    <Card.Text>{entryData.thoughts}</Card.Text>
                     <Button
                       className="btn-block btn-danger"
-                      onClick={() => handleDeleteEntry(entry.entryId)}
+                      onClick={() => handleDeleteEntry(entryData.entryId)}
                     >
                       Delete this Entry
                     </Button>

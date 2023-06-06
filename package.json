@@ -14,7 +14,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^5.1.0",
+    "react-kawaii": "^0.18.0"
   },
   "dependencies": {
     "axios": "^1.4.0",
