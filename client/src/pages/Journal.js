@@ -36,7 +36,7 @@ function JournalEntryForm() {
   };
 
   return (
-    <div className=" container-fluid">
+    <div className="journal-entry-form container-fluid">
       <div className="row">
         <div className="col-lg-4 flex-column justify-content-center align-items-center">
           <div className="journal-prompts textcenter">
@@ -72,12 +72,12 @@ function JournalEntryForm() {
               </button>
             </form>
            
-              <div />
             <div className="col-lg-4">
               <div className="cat-container">
-                <Cat size={220} mood="happy" color="#596881" />
+                <Cat size={220} mood="lovestruck" color="#596881" />
                 <div />
-                </div>
+              </div>
+              <div />
             </div>
           </div>
         </div>
@@ -87,5 +87,3 @@ function JournalEntryForm() {
 }
 
 export default JournalEntryForm;
-
-// NOTHING WORKS
