@@ -40,7 +40,7 @@ const resolvers = {
       if (context.user) {
         return await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { journalEntries: {...thoughtData}} },
+          { $addToSet: { savedEntries: {...thoughtData}} },
           { new: true }
         );
       }
@@ -50,7 +50,7 @@ const resolvers = {
       if (context.user) {
         return await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { journalEntries: {entryId} } },
+          { $pull: { savedEntries: {entryId} } },
           { new: true },
         );
 

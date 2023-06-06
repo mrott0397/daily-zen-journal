@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const journalSchema = new Schema({
-  thoughts: {
+  title: {
     type: String,
     required: true,
   },
@@ -9,6 +9,10 @@ const journalSchema = new Schema({
     type: String,
     required: true,
   },
+  content: {
+    type: String,
+    required: true,
+  }
 });
 
 

@@ -1,20 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Prompts from '../components/Prompts';
+import { SAVE_ENTRY } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
 
 function JournalEntryForm() {
     const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
-
-    const handleSubmit = (event) => {
+    const [thoughts, setContent] = useState('');
+    const [saveEntry, { error }] = useMutation(SAVE_ENTRY);
+    
+    const handleSubmit = async (event) => {
         event.preventDefault();
-
+        
         // Here, you can perform any additional logic you need,
         // such as saving the journal entry to a database.
+        // const handleSaveEntry = async (event) => {
+        //     event.preventDefault();
+            const entryData = {
+                title: title,
+                thoughts: thoughts,
+            };
+            try {
+                await saveEntry({
+                    variables: { entryData },
+                });
+            } catch (err) {
+                console.error(err);
+            }
+
+    
+        // };
 
         // Reset the form
-        setTitle('');
-        setContent('');
+        // setTitle('');
+        // setContent('');
     };
+
+    
+
 
     return (
         
@@ -27,9 +49,9 @@ function JournalEntryForm() {
             
                     </div>
                 </div>
-                <form onSubmit={handleSubmit} className="journal-entry-form">
-                    <div  />
-                    <h1>Journal Entry of the Day</h1>
+                <form onSubmit={handleSubmit} className="journal-entry-form" >
+                    <div/>
+                    <h1 style={{textAlign: "center"}}>Let's Reflect</h1>
                     <label className='form-label'>
                         Title:
                         <input
@@ -41,9 +63,9 @@ function JournalEntryForm() {
                         />
                     </label>
                     <label className='form-label'>
-                        Content:
+                        Entry:
                         <textarea
-                            value={content}
+                            value={thoughts}
                             onChange={(event) => setContent(event.target.value)}
                             required
                             className='form-textarea larger-textarea'
@@ -58,54 +80,3 @@ function JournalEntryForm() {
 }
 
 export default JournalEntryForm;
-
-
-
-
-// import React, { useReducer, useState } from "react";
-
-// const formReducer = (state, event) => {
-//  return {
-//    ...state,
-//    [event.name]: event.value
-//  }
-// }
-
-// function Journal() {
-//   const [formData, setFormData] = useReducer(formReducer, {});
-//   const [submitting, setSubmitting] = useState(false);
-
-//   const handleSubmit = event => {
-//     event.preventDefault();
-//     setSubmitting(true);
-
-//     setTimeout(() => {
-//       setSubmitting(false);
-//     }, 3000);
-//   }
-
-//   const handleChange = event => {
-//     setFormData({
-//       name: event.target.name,
-//       value: event.target.value,
-//     });
-//   }
-
-//             return (
-//                     <div className="journal">
-//                       <h1>Get your Zen On</h1>
-//                       <form>
-//                       <fieldset>
-//                          <label>
-//                            <p>Name</p>
-//                            <input name="name" onChange={handleChange} />
-//                          </label>
-//                        </fieldset>
-//                        <button type="submit">Submit</button>
-//                       </form>
-//                     </div>
-//                   )
-//                 }
-
-
-// export default Journal;

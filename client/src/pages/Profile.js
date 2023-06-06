@@ -6,17 +6,12 @@ import { REMOVE_ENTRY} from "../utils/mutations";
 import { removeEntryId } from "../utils/localStorage";
 import { QUERY_ME } from "../utils/queries";
 
-// function Profile({currentPage, handlePageChange}) {
-//     return (
-//           <div className="profile">
-//             <h1>Profile Page</h1>
-//           </div>
-//           )
-//         }
+
 const Profile = () => {
   const { loading, data } = useQuery(QUERY_ME);
   const [RemoveEntry, { error }] = useMutation(REMOVE_ENTRY);
   const thoughts = data?.me.savedThoughts || [];
+  const userData = data?.me || {};
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteEntry = async (entryId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -39,10 +34,10 @@ const Profile = () => {
   if (loading) {
     return <h2>LOADING...</h2>;
   }
-
+console.log(userData)
   return (
     <>
-      <div fluid className="text-light bg-dark p-5">
+      <div fluid="true" className="text-light bg-dark p-5">
         <Container>
           <h1>Your Profile Page</h1>
         </Container>
@@ -66,7 +61,7 @@ const Profile = () => {
                       alt={`The cover for ${entry.title}`}
                       variant="top"
                     />
-                  ) : null}
+                  ) : null} 
                   <Card.Body>
                     <Card.Title>{entry.title}</Card.Title>
                     <p className="small">Authors: {entry.authors}</p>
