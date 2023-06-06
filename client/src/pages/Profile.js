@@ -5,6 +5,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { REMOVE_ENTRY} from "../utils/mutations";
 import { removeEntryId } from "../utils/localStorage";
 import { QUERY_ME } from "../utils/queries";
+import JournalEntryForm from "./Journal";
 
 
 const Profile = () => {
@@ -35,6 +36,10 @@ const Profile = () => {
     return <h2>LOADING...</h2>;
   }
 console.log(userData)
+
+function ProfileJournalEntries() {
+  
+}
   return (
     <>
       <div fluid="true" className="text-light bg-dark p-5">

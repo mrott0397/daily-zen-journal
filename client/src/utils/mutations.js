@@ -31,6 +31,7 @@ export const SAVE_ENTRY = gql`
         entryCount
         savedEntries {
           entryId
+          title
           thoughts
         }
       }
