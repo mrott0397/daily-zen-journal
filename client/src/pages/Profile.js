@@ -10,7 +10,7 @@ import { QUERY_ME } from "../utils/queries";
 const Profile = () => {
   const { loading, data } = useQuery(QUERY_ME);
   const [RemoveEntry, { error }] = useMutation(REMOVE_ENTRY);
-  const thoughts = data?.me.savedThoughts || [];
+  // const thoughts = data?.me.savedThoughts || [];
   const userData = data?.me || {};
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteEntry = async (entryId) => {
@@ -39,19 +39,19 @@ console.log(userData)
     <>
       <div fluid="true" className="text-light bg-dark p-5">
         <Container>
-          <h1>Your Profile Page</h1>
+          <h1>{userData.username}'s' Profile Page</h1>
         </Container>
       </div>
       <Container>
         <h2 className="pt-5">
-          {thoughts.length
-            ? `Viewing ${thoughts.length} saved ${
-                thoughts.length === 1 ? "entry" : "thoughts"
+          {userData.savedEntries?.length
+            ? `Viewing ${userData.savedEntries.length} saved ${
+                userData.savedEntries.length === 1 ? "entry" : "thoughts"
               }:`
             : "You have no saved entries!"}
         </h2>
         <Row>
-          {thoughts.map((entry) => {
+          {userData.savedEntries?.map((entry) => {
             return (
               <Col md="4">
                 <Card key={entry.entryId} border="dark">
@@ -64,8 +64,8 @@ console.log(userData)
                   ) : null} 
                   <Card.Body>
                     <Card.Title>{entry.title}</Card.Title>
-                    <p className="small">Authors: {entry.authors}</p>
-                    <Card.Text>{entry.description}</Card.Text>
+                    {/* <p className="small">Authors: {entry.authors}</p> */}
+                    <Card.Text>{entry.thoughts}</Card.Text>
                     <Button
                       className="btn-block btn-danger"
                       onClick={() => handleDeleteEntry(entry.entryId)}
