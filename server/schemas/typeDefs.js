@@ -15,9 +15,9 @@ const typeDefs = gql`
     }
 
     type Journal {
-        entryId: ID
-        title: String
-        thoughts: String
+        entryId: ID!
+        title: String!
+        thoughts: String!
     }
 
     type Auth{
