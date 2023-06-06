@@ -1,42 +1,40 @@
-// import React from "react";
- 
-// function Prompts() {
-//   return (
-//     <div className="prompts">
-//       <h1>Prompts Page</h1>
-//     </div>
-//   );
-// }
+import React, { useState, useEffect } from 'react';
 
-// export default Prompts;
-
-import React from 'react';
-
-function Prompts() {
+const  SeededPrompts = () => {
   const prompts = [
     'Write about a happy memory.',
-    // 'What are you grateful for today?',
-    // 'Describe your favorite place in nature.',
-    // 'Write about a person who inspires you.',
-    // 'What are your goals for the future?'
+    'What are you grateful for today?',
+    'Describe your favorite place in nature.',
+    'Write about a person who inspires you.',
+    'What are your goals for the future?'
   ];
 
+  const [randomPrompt, setRandomPrompt] = useState('');
+
+  useEffect(() => {
+    generatePrompt();
+    }, []);
+
+  const generatePrompt = () => {
+    const randomPrompt = [Math.floor(Math.random() * prompts.length)];
+    const selectedPrompt = prompts[randomPrompt];
+    setRandomPrompt(selectedPrompt);
+  };
+
   return (
-    <div>
-      {prompts.map((prompt, index) => (
-        <CuteTextBox key={index} prompt={prompt} />
-      ))}
+    <div className='textcenter'>
+      <CuteTextBox randomPrompt={randomPrompt} />
+      <button onClick={generatePrompt}>Generate New Prompt</button>
     </div>
   );
+  function CuteTextBox({ randomPrompt }) {
+    return (
+      <div className="cute-textbox">
+        <h2>{ randomPrompt }</h2>
+      </div>
+    );
 }
 
-function CuteTextBox({ prompt }) {
-  return (
-    <div className="cute-textbox">
-      <h2>{prompt}</h2>
-    </div>
-  );
-}
+};
 
-export default Prompts;
-
+export default SeededPrompts;

@@ -13,8 +13,7 @@ header {
 header h1 {
   background-color: #bf6c97;
   color: black;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.3rem;
   padding: 5px 10px 5px 0%;
 }
@@ -48,9 +47,9 @@ nav a {
 main {
   max-width: 90%;
   margin: 20px auto 45px auto;
-  
-
-  
+}
+.qoute {
+  font-family: 'Playfair Display', serif;
 }
 .form-container {
   display: flex;
@@ -92,12 +91,13 @@ main {
   resize: vertical;
 }
 .larger-textarea {
-  height: 200px; /* Adjust the value as needed */
+  height: 300px; /* Adjust the value as needed */
 }
 
 .form-submit {
   padding: 8px 16px;
   background-color:  #bf6c97;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: black;
   border: none;
   border-radius: 4px;
@@ -110,6 +110,7 @@ main {
 
 .cute-textbox {
   background-color: #bf6c97;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 8px;
   margin-top: 16px;
   border-radius: 8px;
@@ -147,70 +148,7 @@ main {
   justify-content: center;
 }
 
-.projects {
-  display: flex;
-  border: 5px solid #cd7a00;
-  background-color: #567d89;
-  color: black;
-  min-height: 200px;
-  max-height: 200px;
-  flex-basis: calc(48% - 1em);
-  align-items: flex-end;
-  margin: 0.5em;
-  background-size: 150%;
-}
 
-.projects:first-child {
-  min-height: 350px;
-  flex-basis: 100%;
-}
-
-.div-project-heading {
-  border: 1.5px solid #cd7a00;
-  background-color: #cd7a00;
-}
-h3, span {
-  background-color: #cd7a00;
-}
-
-.project-1 {
-  background-image: url("https://designshack.net/wp-content/uploads/modern-retro.png");
-  background-size: fill;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.project-2 {
-  background-image: url("https://cdn.dribbble.com/users/3149419/screenshots/16816366/media/aade624d7643a61f8205dd9d65edeb98.jpg?compress=1&resize=400x300");
-  background-position: center;
-  background-size: fill;
-  background-repeat: no-repeat;
-}
-.project-3 {
-  background-image: url("https://cdn.dribbble.com/users/3149419/screenshots/16186448/media/ac3ab292f5121d8b3af69d521a050e44.jpg?compress=1&resize=400x300");
-  background-size: fill;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.project-4 {
-  background-image: url("https://cdn.dribbble.com/users/3149419/screenshots/17194451/nouveau_drib_2x.jpg");
-  background-size: fill;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.project-5 {
-  background-image: url("https://cdn.dribbble.com/users/3149419/screenshots/11364692/media/bf5c3d34baf0ea520a888fff442a3bbc.jpg?compress=1&resize=400x300");
-  background-size: fill;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.contact address {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #567d89;
-  height: 100%;
-}
 address a {
   display: inline-block;
   margin: 0 0.2rem 0.1rem;
@@ -261,30 +199,10 @@ a:hover {
     display: flex;
     margin: 0px 0 0 80px;
   }
-
-.contact a  {
-  display: flex;
-  font-size: 0.8rem;
-  text-decoration: none;
-  color: black;
-  flex-flow: column;
-  margin: 0px 0 0 80px;
-  justify-content: center;
-}
-.projects  {
-  display: flex;
-  background-size: auto;
-}
 }
 @media screen and (max-width: 720px) {
   .page-section p {
     display: flex;
     margin: 0 20px 0 0;
-  }
-  .contact a {
-    display: flex;
-    justify-content: center;
-   
-  
   }
 }
