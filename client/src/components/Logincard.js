@@ -6,6 +6,8 @@ import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations'; 
 
+import signInImage from '../assets/book.jpeg'
+
 const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
@@ -47,11 +49,17 @@ const LoginForm = () => {
 
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <div className='signin-image'>
+        <image src={signInImage} alt='sign in' />
+      </div>
+      <Form noValidate validated={validated} className='signin' onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
         </Alert>
-        <Form.Group className='mb-3'>
+
+        <h2 className='signin'>Sign In Here:</h2>
+
+        <Form.Group className='mb-3 signin'>
           <Form.Label htmlFor='email'>Email</Form.Label>
           <Form.Control
             type='text'
@@ -61,10 +69,10 @@ const LoginForm = () => {
             value={userFormData.email}
             required
           />
-          <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+        
         </Form.Group>
 
-        <Form.Group className='mb-3'>
+        <Form.Group className='mb-3 signin'>
           <Form.Label htmlFor='password'>Password</Form.Label>
           <Form.Control
             type='password'
@@ -74,9 +82,10 @@ const LoginForm = () => {
             value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+       
         </Form.Group>
         <Button
+        className='signin'
           disabled={!(userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
