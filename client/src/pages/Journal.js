@@ -20,8 +20,9 @@ function JournalEntryForm() {
                 thoughts: thoughts,
             };
             try {
+                console.log(entryData);
                 await saveEntry({
-                    variables: { entryData },
+                    variables: { title: entryData.title, thoughts: entryData.thoughts },
                 });
             } catch (err) {
                 console.error(err);
