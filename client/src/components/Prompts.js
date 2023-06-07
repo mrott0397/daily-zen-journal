@@ -9,6 +9,8 @@ const  SeededPrompts = () => {
     'What are your goals for the future?'
   ];
 
+  
+
   const [randomPrompt, setRandomPrompt] = useState('');
 
   useEffect(() => {
@@ -24,7 +26,7 @@ const  SeededPrompts = () => {
   return (
     <div className='textcenter'>
       <CuteTextBox randomPrompt={randomPrompt} />
-      <button onClick={generatePrompt}>Generate New Prompt</button>
+      <button className='center-button' onClick={generatePrompt}>Generate New Prompt</button>
     </div>
   );
   function CuteTextBox({ randomPrompt }) {

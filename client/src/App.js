@@ -16,6 +16,12 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import Journal from "./pages/Journal";
+import {Planet} from 'react-kawaii';
+
+const Example = () => (
+ <Planet size={200} mood="blissful" color="#FDA7DC" />
+)
+
 
 
 const httpLink = createHttpLink({
