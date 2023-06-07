@@ -107,6 +107,34 @@ main {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.card {
+  border: 1px solid #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.card .card-header {
+  padding: 0.375rem;
+  background-color: #2d3e50;
+  color: #d9e9e8;
+}
+
+.card .card-body {
+  padding: 0.375rem;
+}
+
+.card .card-footer {
+  border-top: 1px solid #1a1a1a;
+  padding: 0.375rem;
+}
+
+.card.card-rounded {
+  border-radius: 0.3rem;
+}
+
+.card.card-rounded .card-header {
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}
 /* -------------- Journal Cat -------------- */
 .form-container {
   margin-left: 40px;

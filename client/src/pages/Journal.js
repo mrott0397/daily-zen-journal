@@ -26,7 +26,7 @@ const JournalEntryForm = () => {
             <form className="journal-entry-form">
               <div />
               <h1 style={{ textAlign: "center" }}>Let's Reflect</h1>
-              <ThoughtForm />
+               <ThoughtForm/>      
             </form>
 
             <div className="col-lg-4">
