@@ -2,42 +2,49 @@ import React, { useState, useEffect } from 'react';
 import Prompts from '../components/Prompts';
 import { SAVE_ENTRY } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
+import { saveEntryIds, getSavedEntryIds } from '../utils/localStorage';
 
 function JournalEntryForm() {
     const [title, setTitle] = useState('');
     const [thoughts, setContent] = useState('');
+    const [entry, setEntry] = useState([]);
+    const [savedEntryIds, setSavedEntryIds] = useState(getSavedEntryIds());
     const [saveEntry, { error }] = useMutation(SAVE_ENTRY);
+
+    useEffect(() => {
+        return () => saveEntryIds(savedEntryIds);
+    });
     
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        
-        // Here, you can perform any additional logic you need,
-        // such as saving the journal entry to a database.
-        // const handleSaveEntry = async (event) => {
-        //     event.preventDefault();
-            const entryData = {
-                title: title,
-                thoughts: thoughts,
-            };
-            try {
-                console.log(entryData);
-                await saveEntry({
-                    variables: { title: entryData.title, thoughts: entryData.thoughts },
-                });
-            } catch (err) {
+    const handleJournalSubmit = async (entryId) => {
+        // event.preventDefault();
+        const journalToSave = entry.find((journal) => journal.entryId === entryId);
+        //    const token = Auth.loggedIn() ? Auth.getToken() : null;
+        //    if (!token) {
+        //        return false;
+        //    }
+           try {
+            const { data } = await saveEntry({
+                variables: { userData: { ...journalToSave } },
+            });
+
+            const { items } = await data.json();
+
+            const entryData = items.map((journal) => ({
+                entryId: journal.entryId,
+                title: journal.title,
+                thoughts: journal.thoughts,
+            }));
+
+            setEntry(entryData);
+            setSavedEntryIds([...savedEntryIds, journalToSave.entryId]);
+            console.log(savedEntryIds);
+              } catch (err) {
                 console.error(err);
-            }
-
-    
-        // };
-
-        // Reset the form
-        // setTitle('');
-        // setContent('');
+              }
     };
 
     
-
+// still not working 
 
     return (
         
@@ -50,7 +57,7 @@ function JournalEntryForm() {
             
                     </div>
                 </div>
-                <form onSubmit={handleSubmit} className="journal-entry-form" >
+                <form onSubmit={handleJournalSubmit} className="journal-entry-form" >
                     <div/>
                     <h1 style={{textAlign: "center"}}>Let's Reflect</h1>
                     <label className='form-label'>

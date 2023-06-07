@@ -10,7 +10,6 @@ import { QUERY_ME } from "../utils/queries";
 const Profile = () => {
   const { loading, data } = useQuery(QUERY_ME);
   const [RemoveEntry, { error }] = useMutation(REMOVE_ENTRY);
-  // const thoughts = data?.me.savedThoughts || [];
   const userData = data?.me || {};
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteEntry = async (entryId) => {
@@ -39,7 +38,7 @@ console.log(userData)
     <>
       <div fluid="true" className="text-light bg-dark p-5">
         <Container>
-          <h1>{userData.username}'s' Profile Page</h1>
+          <h1>{userData.username}'s Profile Page</h1>
         </Container>
       </div>
       <Container>
