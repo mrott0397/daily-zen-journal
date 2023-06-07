@@ -13,6 +13,7 @@
     "react": "^16.13.1",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^16.13.1",
+    "react-kawaii": "^0.18.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "^5.0.1"
   },

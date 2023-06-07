@@ -1,9 +1,9 @@
 import React from "react";
 // import AppNavbar from "./Nav";
-import LoginForm from "./Logincard";
-import Header from "./Header";
-import SignupForm from "./SignupForm";
-import './homepage.css'
+import LoginForm from "../components/Logincard";
+import Header from "../components/Header";
+import SignupForm from "../components/SignupForm";
+// import './homepage.css'
 
 function Homepage(props) {
   const { currentPage, handlePageChange } = props;
