@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Header from "./components/Header";
 // import Journal from "./components/Journal";
 import Footer from "./components/Footer";
-import Homepage from "./components/Homepage";
+import Homepage from "./pages/Homepage";
 import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
 import Prompts from "./components/Prompts";
@@ -67,10 +67,10 @@ function App() {
         <>
           <Header />
           {/* <Nav/> */}
-            <Routes>
+            <Routes fluid="true">
             {/* <Route path="/" element={<Homepage />} /> */}
             <Route path="/" element={<Homepage />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile />} fluid="true" />
             <Route path="/saved" element={<Journal />} />
             {/* <Route
               path="*"
