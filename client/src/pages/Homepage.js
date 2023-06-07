@@ -13,7 +13,6 @@ function Homepage(props) {
     <h1 style={{textAlign: "center"}}>Welcome to the Daily Zen Journal, a place for you to relax and reflect. 
     </h1>
     <br />
-    {/* <h2 style={{ textAlign: 'center'}}>Sign up or log in to get started!</h2> */}
     <br />
     <div className="container">
       <div className='cover'>

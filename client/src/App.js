@@ -46,20 +46,6 @@ const client = new ApolloClient({
 
 
 function App() {
-  // const [currentPage, setCurrentPage] = useState("Homepage");
-
-  // const renderPage = () => {
-  //   if (currentPage === "Journal") {
-  //     return <Journal />;
-  //   }
-  //   if (currentPage === "Profile") {
-  //     return <Profile />;
-  //   }
-  //     return <Homepage />;
-  // };
-
-  
-  // const handlePageChange = (page) => setCurrentPage(page);
 
   return (
     <ApolloProvider client={client}>
