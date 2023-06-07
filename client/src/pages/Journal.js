@@ -3,37 +3,15 @@ import Prompts from "../components/Prompts";
 import { SAVE_ENTRY } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { Cat } from "react-kawaii";
+import { useQuery } from "@apollo/client";
+import ThoughtList from "../components/ThoughtList";
+import ThoughtForm from "../components/ThoughtForm";
 
-function JournalEntryForm() {
-  const [title, setTitle] = useState("");
-  const [thoughts, setContent] = useState("");
-  const [saveEntry, { error }] = useMutation(SAVE_ENTRY);
+import { QUERY_THOUGHTS } from "../utils/queries";
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    // Here, you can perform any additional logic you need,
-    // such as saving the journal entry to a database.
-    // const handleSaveEntry = async (event) => {
-    //     event.preventDefault();
-    const entryData = {
-      title: title,
-      thoughts: thoughts,
-    };
-    try {
-      await saveEntry({
-        variables: { entryData },
-      });
-    } catch (err) {
-      console.error(err);
-    }
-
-    // };
-
-    // Reset the form
-    // setTitle('');
-    // setContent('');
-  };
+const JournalEntryForm = () => {
+  const { loading, data } = useQuery(QUERY_THOUGHTS);
+  const thoughts = data?.thoughts || [];
 
   return (
     <div className="journal-entry-form container-fluid">
@@ -45,33 +23,12 @@ function JournalEntryForm() {
         </div>
         <div className="col-lg-4">
           <div className="form-container">
-            <form onSubmit={handleSubmit} className="journal-entry-form">
+            <form className="journal-entry-form">
               <div />
               <h1 style={{ textAlign: "center" }}>Let's Reflect</h1>
-              <label className="form-label">
-                Title:
-                <input
-                  type="text"
-                  value={title}
-                  onChange={(event) => setTitle(event.target.value)}
-                  required
-                  className="form-input"
-                />
-              </label>
-              <label className="form-label">
-                Entry:
-                <textarea
-                  value={thoughts}
-                  onChange={(event) => setContent(event.target.value)}
-                  required
-                  className="form-textarea larger-textarea"
-                />
-              </label>
-              <button type="submit" className="form-submit">
-                Submit
-              </button>
+              <ThoughtForm />
             </form>
-           
+
             <div className="col-lg-4">
               <div className="cat-container">
                 <Cat size={220} mood="lovestruck" color="#596881" />
@@ -84,6 +41,6 @@ function JournalEntryForm() {
       </div>
     </div>
   );
-}
+};
 
 export default JournalEntryForm;

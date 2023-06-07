@@ -6,7 +6,7 @@ import LoginForm from './Logincard';
 import '../App.css'
 
 import Auth from '../utils/auth';
-import Homepage from './Homepage';
+import Homepage from '../pages/Homepage';
 import Journal from '../pages/Journal';
 import Profile from '../pages/Profile';
 // import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';

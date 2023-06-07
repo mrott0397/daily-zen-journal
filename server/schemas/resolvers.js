@@ -1,12 +1,24 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Journal } = require('../models');
+const { User, Thought } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
+    user: async (parent, { username }) => {
+      return User.findOne({ username }).populate('thoughts');
+    },
+
+    thoughts: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Thought.find(params).sort({ createdAt: -1 });
+    },
+    thought: async (parent, { thoughtId }) => {
+      return Thought.findOne({ _id: thoughtId });
+    },
+
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id });
+        return User.findOne({ _id: context.user._id }).populate('thoughts');
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -36,24 +48,35 @@ const resolvers = {
       return { token, user };
     },
 
-    saveEntry: async (parent, { thoughtData }, context) => {
+    addThought: async (parent, { thoughtText }, context) => {
       if (context.user) {
-        return await User.findOneAndUpdate(
+        const thought = await Thought.create({
+          thoughtText,
+          thoughtAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { journalEntries: thoughtData } },
-          { new: true }
+          { $addToSet: { thoughts: thought._id } }
         );
+
+        return thought;
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    removeEntry: async (parent, { entryId }, context) => {
+    removeThought: async (parent, { thoughtId }, context) => {
       if (context.user) {
-        return await User.findOneAndUpdate(
+        const thought = await Thought.findOneAndDelete({
+          _id: thoughtId,
+          thoughtAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { journalEntries: {entryId} } },
-          { new: true },
+          { $pull: { thoughts: thought._id } }
         );
 
+        return thought;
       }
       throw new AuthenticationError('You need to be logged in!');
     },
