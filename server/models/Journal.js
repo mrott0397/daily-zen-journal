@@ -9,7 +9,7 @@ const journalSchema = new Schema({
     type: String,
     required: true,
   },
-  content: {
+  thoughts: {
     type: String,
     required: true,
   }
