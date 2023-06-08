@@ -55,7 +55,7 @@ const SignupForm = () => {
           Something went wrong with your signup!
         </Alert>
 
-        <h2 className='signup'>Sign Up Here:</h2>
+        <h2 className='signup'>-- Sign Up Here --</h2>
 
         <Form.Group className='mb-3 signup '>
           <Form.Label htmlFor='username'>Username:</Form.Label>
