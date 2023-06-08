@@ -62,29 +62,21 @@ const Profile = () => {
     //   </div>
     // </div>
     <div>
-      <div className="flex-row justify-center mb-3">
+      <div className="flex-row justify-center ">
         <h2 className="">
           Viewing {user.username}'s journal entries. Way to go!
         </h2>
-
-        <Container>
-          <Row>
-            {user.thoughts.map((thought) => (
-              <Col key={thought._id} sm={12} md={4} lg={4}>
-                <ThoughtList
-                  thoughts={[thought]}
-                  title={`${user.username}'s thoughts...`}
-                  showTitle={false}
-                  showUsername={false}
-                />
-              </Col>
-            ))}
-          </Row>
-        </Container>
-
+        <div className="thoughts-container">
+          <ThoughtList
+            thoughts={user.thoughts}
+            title={`${user.username}'s thoughts...`}
+            showTitle={false}
+            showUsername={false}
+          />
+        </div>
         {!userParam && (
           <div
-            className="col-12 col-md-10 mb-3 p-3"
+            className=""
             style={{ border: '1px dotted #1a1a1a' }}
           ></div>
         )}

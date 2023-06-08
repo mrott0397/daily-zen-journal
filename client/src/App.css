@@ -108,6 +108,13 @@ main {
   cursor: pointer;
 }
 
+.thoughts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+
 .card {
   border: 1px solid #bf6c97;
   margin-bottom: 1rem;
