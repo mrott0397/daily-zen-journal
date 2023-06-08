@@ -70,10 +70,10 @@ main {
  
 .journal-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
 .gif-container {
@@ -91,7 +91,6 @@ main {
 
 .journal-prompts {
   flex-grow: 1;
-  /* max-width: 400px; */
   padding: 10px;
   background-color: white;
   border-radius: 10px;
@@ -102,11 +101,6 @@ main {
 }
 
 .journal {
-  /* flex: 1;
-  padding: 5px 20px;
-  display: flex;
-  flex-direction: column;
-  margin-left: 20rem; */
   max-width: 400px;
 }
 
@@ -169,12 +163,6 @@ journal h1 {
 }
 
 .cat-container {
-  /* display: flex;
- justify-content: right;
-  margin-right: 40px;
-  margin-bottom: 50px; */
-  padding-top: 50px;
- margin-top: 20px;
  text-align: center;
 }
 
@@ -220,20 +208,19 @@ journal h1 {
   
 }
 
-
-
 .thoughts-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; */
+}
+.row-cols-3 .col {
+  flex-basis: calc(33.33% - 20px); /* Adjust the width and margin as needed */
+  margin: 10px;
 }
 
 
+
+/* ------------- Thought Cards ---------- */
 .card {
   border: 1px solid #da8a8b;
   margin-bottom: 1rem;
@@ -243,7 +230,6 @@ journal h1 {
   margin: 10px;
   background-color: white;
 }
-
 
 .card .card-header {
   padding: 0.375rem;
@@ -272,9 +258,6 @@ journal h1 {
   padding-top: 15px;
 }
 
-/* .card-footer > * {
-  margin-bottom: 10px;
-} */
 .card-footer img {
   width: 50px;
   height: 50px;

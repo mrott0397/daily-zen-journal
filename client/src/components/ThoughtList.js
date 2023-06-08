@@ -104,10 +104,9 @@ console.log(userFormData.thoughtText)
 return (
 <div>
 {showTitle && <h3>{title}</h3>}
-<Container className='thoughts-container'>
-  <Row>
+<div className='thoughts-container'>
     {thoughts.map((thought) => (
-      <Col key={thought._id} lg={4} md={6} sm={12} className="mb-3">
+      <Col key={thought._id} className="thought-card">
         <Card style={{ width: '300px', height: '300px', maxHeight: '300px' }}>
           <Card.Header className="bg-primary text-light p-2 m-0">
             {showUsername ? (
@@ -131,25 +130,6 @@ return (
           <Card.Body className="d-flex flex-column bg-light p-2">
             <Card.Title></Card.Title>
             <Card.Text className='text-truncate'>
-             {/* {thought.thoughtText} */}
-            {/* </Card.Text>
-            <div
-                    contentEditable="true" // Make the field editable
-                    name="thoughtText"
-                    className="form-control"
-                    onBlur={handleInputChange}
-                    dangerouslySetInnerHTML={{ __html: userFormData.thoughtText }}
-                  ></div>
-            {/* <Form.Group>
-                <Form.Control 
-                 name='thoughtText'
-                value={userFormData.thoughtText}
-                onChange={handleInputChange}
-                  ></Form.Control>
-              </Form.Group> */}
-          {/* <Card.Footer>
-            <Button variant='danger' onClick={() => handleDeleteThought(thought._id)}>Delete Button</Button>{' '} <br />
-            <Button variant='info' onClick={() => handleUpdateThought(thought._id)}>Update Button</Button> */}
           {editThoughtId === thought._id ? (
                       <Form.Control
                         name="thoughtText"
@@ -183,13 +163,11 @@ return (
                       Delete
                     </Button>
           </Card.Footer>
-          
           </Card.Body>
         </Card>
       </Col>
     ))}
-  </Row>
-</Container>
+</div>
 </div>
 );
 };
