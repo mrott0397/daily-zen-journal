@@ -112,20 +112,31 @@ main {
 }
 
 .thoughts-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; */
 }
 
 
 .card {
   border: 1px solid #da8a8b;
   margin-bottom: 1rem;
+  width: 300px;
+  height: 300px;
+  max-height: 300px;
+  margin: 10px;
+  background-color: white;
 }
+
 
 .card .card-header {
   padding: 0.375rem;
-  background-color: #2d3e50;
+  background-color: #525695;
   color: #d9e9e8;
 }
 
@@ -137,6 +148,27 @@ main {
   border-top: 1px solid #1a1a1a;
   padding: 0.375rem;
 }
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+/* .card-footer > * {
+  margin-bottom: 10px;
+} */
+.card-footer img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
 
 .card.card-rounded {
   border-radius: 0.3rem;
@@ -202,12 +234,12 @@ main {
   padding: 5px 20px;
 }
 
-.row {
+/* .row {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   margin-bottom: 15px;
-}
+} */
 
 .page-section {
   display: flex;
@@ -281,6 +313,10 @@ a:hover {
   }
   header nav a {
     background: #da8a8b;
+  }
+  .card {
+    width: 100%;
+    max-width: 300px;
   }
 }
 @media screen and (max-width: 667px) {
