@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Row, Container, Col } from 'react-bootstrap';
 import { useMutation, useQuery } from '@apollo/client';
 import { REMOVE_THOUGHT } from '../utils/mutations';
 import { QUERY_ME } from '../utils/queries';
