@@ -48,11 +48,18 @@ const ThoughtList = ({
   }
   };
   
+
+  
+
+
+
+
+
 return (
+
 <div>
 {showTitle && <h3>{title}</h3>}
-<Container className='thoughts-container'>
-  <Row>
+<div className='thoughts-container'>
     {thoughts.map((thought) => (
       <Col key={thought._id} lg={4} md={6} sm={12} className="mb-3">
         <Card style={{ width: '300px', height: '300px', maxHeight: '300px' }}>
@@ -88,8 +95,7 @@ return (
         </Card>
       </Col>
     ))}
-  </Row>
-</Container>
+</div>
 </div>
 );
 };
