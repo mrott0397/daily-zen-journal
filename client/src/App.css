@@ -66,18 +66,58 @@ main {
   flex-basis: 48%; /* Adjust the width as needed */
 }
 
-.journal {
-  padding: 5px 20px;
+/* ------------- LoFi Record -------------- */
+ 
+.journal-row {
+  display: flex;
+  align-items: center;
 }
 
-.journal fieldset {
-  margin: 20px 0;
+.gif-container {
+  flex-shrink: 0;
+  /* flex: 0 0 auto; */
+  margin-right: 30px; /* Adjust the margin as needed */
+}
+
+.gif-container img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.journal-prompts {
+  flex-grow: 1;
+  max-width: 400px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-left: 30px;
+}
+
+.journal {
+  flex: 1;
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rem;
+  max-width: 50%;
+}
+
+.journal-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+journal h1 {
+  text-align: center;
 }
 
 .journal-entry-form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
   margin: 0 auto;
   justify-content: right;
 }
@@ -86,10 +126,8 @@ main {
   font-weight: bold;
   margin-bottom: 5px;
 }
-
-.form-input,
 .form-textarea {
-  width: 100%;
+  width: 75%;
   padding: 8px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
@@ -109,6 +147,19 @@ main {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+/* -------------- Journal Cat -------------- */
+.form-container {
+  margin-left: 40px;
+  margin-bottom: 50px;
+}
+
+.cat-container {
+  display: flex;
+ justify-content: right;
+  margin-right: 40px;
+  margin-bottom: 50px;
+ margin-top: 20px;
 }
 
 /* Add these styles to make the "About Me" section cute */
@@ -222,20 +273,6 @@ main {
 
 .card.card-rounded .card-header {
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
-}
-/* -------------- Journal Cat -------------- */
-.form-container {
-  margin-left: 40px;
-  margin-bottom: 50px;
-}
-
-.cat-container {
-  display: flex;
-  align-items: left;
-  
-  
-
-  
 }
 
 .form-button:hover {
