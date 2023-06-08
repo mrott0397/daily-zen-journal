@@ -71,12 +71,15 @@ main {
 .journal-row {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 50px;
 }
 
 .gif-container {
-  flex-shrink: 0;
-  /* flex: 0 0 auto; */
-  margin-right: 30px; /* Adjust the margin as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gif-container img {
@@ -88,21 +91,23 @@ main {
 
 .journal-prompts {
   flex-grow: 1;
-  max-width: 400px;
-  padding: 20px;
+  /* max-width: 400px; */
+  padding: 10px;
   background-color: white;
   border-radius: 10px;
   margin-right: 20px;
-  margin-left: 30px;
+  margin-left: 20px;
+  margin-top: 50px;
+  width: 2px;
 }
 
 .journal {
-  flex: 1;
+  /* flex: 1;
   padding: 5px 20px;
   display: flex;
   flex-direction: column;
-  margin-left: 20rem;
-  max-width: 50%;
+  margin-left: 20rem; */
+  max-width: 400px;
 }
 
 .journal-form {
@@ -110,6 +115,7 @@ main {
   display: flex;
   flex-direction: column;
   text-align: center;
+  align-items: center;
 }
 journal h1 {
   text-align: center;
@@ -118,25 +124,33 @@ journal h1 {
 .journal-entry-form {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  justify-content: right;
+  align-items: center;
+  /* margin: 0 auto;
+  justify-content: right; */
 }
+.journal-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
 
 .form-label {
   font-weight: bold;
   margin-bottom: 5px;
 }
 .form-textarea {
-  width: 75%;
+  width: 100%;
   padding: 8px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
-  margin-left: 7px;
+  /* margin-left: 7px; */
 }
 .larger-textarea {
   height: 300px; /* Adjust the value as needed */
+  width: 35rem;
 }
 
 .form-submit {
@@ -155,11 +169,13 @@ journal h1 {
 }
 
 .cat-container {
-  display: flex;
+  /* display: flex;
  justify-content: right;
   margin-right: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 50px; */
+  padding-top: 50px;
  margin-top: 20px;
+ text-align: center;
 }
 
 /* Add these styles to make the "About Me" section cute */
