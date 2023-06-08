@@ -66,14 +66,18 @@ const resolvers = {
     },
     removeThought: async (parent, { thoughtId }, context) => {
       if (context.user) {
+        console.log("context.user")
+        console.dir(context.user)
         const thought = await Thought.findOneAndDelete({
-          _id: thoughtId,
-          thoughtAuthor: context.user.username,
+          _id: thoughtId
+         
+        }, {
+          new: true,
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { thoughts: thought._id } }
+          { $pull: { thoughts: thoughtId } }
         );
 
         return thought;
