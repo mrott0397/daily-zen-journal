@@ -1,9 +1,9 @@
 import React from "react";
 // import AppNavbar from "./Nav";
-import LoginForm from "./Logincard";
-import Header from "./Header";
-import SignupForm from "./SignupForm";
-import './homepage.css'
+import LoginForm from "../components/Logincard";
+import Header from "../components/Header";
+import SignupForm from "../components/SignupForm";
+// import './homepage.css'
 
 function Homepage(props) {
   const { currentPage, handlePageChange } = props;
@@ -13,7 +13,6 @@ function Homepage(props) {
     <h1 style={{textAlign: "center"}}>Welcome to the Daily Zen Journal, a place for you to relax and reflect. 
     </h1>
     <br />
-    {/* <h2 style={{ textAlign: 'center'}}>Sign up or log in to get started!</h2> */}
     <br />
     <div className="container">
       <div className='cover'>
