@@ -1,15 +1,11 @@
 import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
-
-import { Button, Card, Row, Container, Col, CardImg } from 'react-bootstrap';
+import { Button, Card, Row, Container, Col, Form } from 'react-bootstrap';
 import { useMutation, useQuery, } from '@apollo/client';
-
-import { REMOVE_THOUGHT } from '../utils/mutations';
+import { REMOVE_THOUGHT, UPDATE_THOUGHT } from '../utils/mutations';
 import { QUERY_ME } from '../utils/queries';
 import { QUERY_THOUGHTS } from '../utils/queries';
 import Auth from '../utils/auth';
-import cardImage from '../assets/cardImage.jpg';
-
 
 
 const ThoughtList = ({
@@ -106,19 +102,18 @@ const ThoughtList = ({
   
 console.log(userFormData.thoughtText)
 return (
-
 <div>
 {showTitle && <h3>{title}</h3>}
-<div className='thoughts-container'>
+<Container className='thoughts-container'>
+  <Row>
     {thoughts.map((thought) => (
-      <div key={thought._id} lg={4} md={6} sm={12} className="mb-3">
+      <Col key={thought._id} lg={4} md={6} sm={12} className="mb-3">
         <Card style={{ width: '300px', height: '300px', maxHeight: '300px' }}>
-
           <Card.Header className="bg-primary text-light p-2 m-0">
             {showUsername ? (
               <Link
-              className="text-light"
-              to={`/profiles/${thought.thoughtAuthor}`}
+                className="text-light"
+                to={`/profiles/${thought.thoughtAuthor}`}
               >
                 {thought.thoughtAuthor} <br />
                 <span style={{ fontSize: '1rem' }}>
@@ -188,12 +183,13 @@ return (
                       Delete
                     </Button>
           </Card.Footer>
+          
           </Card.Body>
         </Card>
-
-      </div>
+      </Col>
     ))}
-</div>
+  </Row>
+</Container>
 </div>
 );
 };
