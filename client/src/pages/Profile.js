@@ -50,12 +50,12 @@ const Profile = () => {
             </div>
           </Col>
           <Col md={8}>
-            <div className="about-me-container">
               <div className="cat-container">
-                <img src={catGif} alt="Animated GIF" />
+                <img src={catGif} alt="Animated GIF" className='cat-gif'/>
               </div>
-              <h4 className="about-me-title" >About Me: Likes to pet and cuddle cats</h4>
-              <p className="about-me-text">{user.aboutMe}</p>
+            <div className="about-me-container">
+              <h4 className="about-me-title" >About Me:</h4>
+              <p className="about-me-text">{user.aboutMe}Likes Cats a lot</p>
             </div>
             <h2 className="viewing">Viewing {user.username}'s journal entries. Way to go!</h2>
             <div className="thoughts-container">
