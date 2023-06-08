@@ -95,7 +95,7 @@ const AppNavbar = () => {
             </Modal.Title>
           {/* </Modal.Header> */}
           <Modal.Body>
-            <Tab.Content className='row'>
+            <Tab.Content className='rowchange'>
               <div className='col-md-6'>
               <Tab.Pane  eventKey='login'>
                 <LoginForm handleModalClose={() => setShowModal(false)} />
