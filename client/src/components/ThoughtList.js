@@ -1,7 +1,9 @@
 import React, { Component} from 'react';
 import { Link } from 'react-router-dom';
+
 import { Button, Card, Row, Container, Col } from 'react-bootstrap';
 import { useMutation, useQuery, } from '@apollo/client';
+
 import { REMOVE_THOUGHT } from '../utils/mutations';
 import { QUERY_ME } from '../utils/queries';
 import { QUERY_THOUGHTS } from '../utils/queries';
@@ -32,7 +34,6 @@ const ThoughtList = ({
 
 
   if (!thoughts.length) {
-
     return <h3>No Journal Entries Yet</h3>;
   }
 
@@ -48,14 +49,21 @@ const ThoughtList = ({
   }
   };
   
+
+  
+
+
+
+  
 return (
+
 <div>
 {showTitle && <h3>{title}</h3>}
-<Container className='thoughts-container'>
-  <Row>
+<div className='thoughts-container'>
     {thoughts.map((thought) => (
       <Col key={thought._id} lg={4} md={6} sm={12} className="mb-3">
         <Card style={{ width: '300px', height: '300px', maxHeight: '300px' }}>
+
           <Card.Header className="bg-primary text-light p-2 m-0">
             {showUsername ? (
               <Link
@@ -80,16 +88,16 @@ return (
             <Card.Text className='text-truncate'>
              {thought.thoughtText}
             </Card.Text>
+          </Card.Body>
           <Card.Footer>
             <Button variant='danger' onClick={() => handleDeleteThought(thought._id)}>Delete Button</Button> <br />
             <Button variant='info'>Update Button</Button>
           </Card.Footer>
-          </Card.Body>
         </Card>
+
       </Col>
     ))}
-  </Row>
-</Container>
+</div>
 </div>
 );
 };

@@ -57,10 +57,10 @@ const LoginForm = () => {
           Something went wrong with your login credentials!
         </Alert>
 
-        <h2 className='signin'>Sign In Here:</h2>
+        <h2 className='signin'>-- Sign In Here --</h2>
 
         <Form.Group className='mb-3 signin'>
-          <Form.Label htmlFor='email'>Email</Form.Label>
+          <Form.Label htmlFor='email'>Email:</Form.Label>
           <Form.Control
             type='text'
             placeholder='Your email'
@@ -73,7 +73,7 @@ const LoginForm = () => {
         </Form.Group>
 
         <Form.Group className='mb-3 signin'>
-          <Form.Label htmlFor='password'>Password</Form.Label>
+          <Form.Label htmlFor='password'>Password:</Form.Label>
           <Form.Control
             type='password'
             placeholder='Your password'

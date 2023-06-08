@@ -2,11 +2,11 @@
 
 
 body {
-  background-color: #336e90;
+  background-color: #936b8f
 }
 header {
   display: flex;
-  background-color: #bf6c97;
+  background-color: white;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -14,8 +14,8 @@ header {
 }
 
 header h1 {
-  background-color: #bf6c97;
-  color: black;
+  background-color: white;
+  color:#525695;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.3rem;
   padding: 5px 10px 5px 0%;
@@ -24,28 +24,31 @@ header nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: #bf6c97;
+  background-color: white;
 }
 /* targeting all anchors of the nav  */
 nav a {
-  background-color: #bf6c97;
+  background-color: white;
   margin-right: 15px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: medium;
   text-decoration: underline;
-  color: black;
+  color: #525695;
 }
 /* text directions overides whats already been styled */
 
 .cover {
-  background-image: url(./assets/LoFi-background.jpeg);
-  background-position: 80% 20%;
+  background-image: url(./assets/zen-journal-background.jpg);
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   min-height: 45vh;
   max-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
 }
 main {
   max-width: 90%;
@@ -100,7 +103,7 @@ main {
 
 .form-submit {
   padding: 8px 15px;
-  background-color:  #bf6c97;
+  background-color:  #936b8f;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: black;
   border: none;
@@ -110,13 +113,13 @@ main {
 
 .thoughts-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 
 .card {
-  border: 1px solid #bf6c97;
+  border: 1px solid #da8a8b;
   margin-bottom: 1rem;
 }
 
@@ -170,7 +173,7 @@ main {
 }
 
 .cute-textbox {
-  background-color: #bf6c97;
+  background-color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 8px;
   margin-top: 16px;
@@ -197,6 +200,13 @@ main {
   margin: 0 auto;
   justify-content: center;
   padding: 5px 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 15px;
 }
 
 .page-section {
@@ -246,7 +256,7 @@ a:hover {
 @media screen and (max-width: 992px) {
   /* Change the header color */
   header {
-    background: #bf6c97;
+    background: white;
   }
 }
 
@@ -261,16 +271,16 @@ a:hover {
   }
   /* Change the header color */
   header {
-    background: #bf6c97;
+    background: #da8a8b;
   }
   header h1 {
-    background: #bf6c97;
+    background:#da8a8b;
   }
   header nav {
-    background: #bf6c97;
+    background: #da8a8b;
   }
   header nav a {
-    background: #bf6c97;
+    background: #da8a8b;
   }
 }
 @media screen and (max-width: 667px) {
