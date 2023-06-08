@@ -1,13 +1,15 @@
 import React, { Component} from 'react';
 import { Link } from 'react-router-dom';
 
-import { Button, Card, Row, Container, Col } from 'react-bootstrap';
+import { Button, Card, Row, Container, Col, CardImg } from 'react-bootstrap';
 import { useMutation, useQuery, } from '@apollo/client';
 
 import { REMOVE_THOUGHT } from '../utils/mutations';
 import { QUERY_ME } from '../utils/queries';
 import { QUERY_THOUGHTS } from '../utils/queries';
 import Auth from '../utils/auth';
+import cardImage from '../assets/cardImage.jpg';
+
 
 
 const ThoughtList = ({
@@ -61,14 +63,14 @@ return (
 {showTitle && <h3>{title}</h3>}
 <div className='thoughts-container'>
     {thoughts.map((thought) => (
-      <Col key={thought._id} lg={4} md={6} sm={12} className="mb-3">
+      <div key={thought._id} lg={4} md={6} sm={12} className="mb-3">
         <Card style={{ width: '300px', height: '300px', maxHeight: '300px' }}>
 
           <Card.Header className="bg-primary text-light p-2 m-0">
             {showUsername ? (
               <Link
-                className="text-light"
-                to={`/profiles/${thought.thoughtAuthor}`}
+              className="text-light"
+              to={`/profiles/${thought.thoughtAuthor}`}
               >
                 {thought.thoughtAuthor} <br />
                 <span style={{ fontSize: '1rem' }}>
@@ -89,13 +91,20 @@ return (
              {thought.thoughtText}
             </Card.Text>
           </Card.Body>
-          <Card.Footer>
-            <Button variant='danger' onClick={() => handleDeleteThought(thought._id)}>Delete Button</Button> <br />
-            <Button variant='info'>Update Button</Button>
+          <Card.Footer className="card-footer">
+          <div className='button-container'>
+            <Button variant="danger" onClick={() => handleDeleteThought(thought._id)}>Delete Button</Button>
+          </div>
+          <div>
+            <Button variant="info">Update Button</Button>
+          </div>
+          <div>
+            <Card.Img variant="bottom" src={cardImage}/>
+          </div>
           </Card.Footer>
         </Card>
 
-      </Col>
+      </div>
     ))}
 </div>
 </div>
