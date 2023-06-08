@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Card, Row, Container, Col } from 'react-bootstrap';
-import { useMutation, useQuery } from '@apollo/client';
+import { useMutation, useQuery, } from '@apollo/client';
 import { REMOVE_THOUGHT } from '../utils/mutations';
 import { QUERY_ME } from '../utils/queries';
 import { QUERY_THOUGHTS } from '../utils/queries';
@@ -14,7 +14,6 @@ const ThoughtList = ({
   showTitle = true,
   showUsername = true,
 }) => {
-  // const [RemoveThought, { error }] = useMutation(REMOVE_THOUGHT);
   const [RemoveThought, { error }] = useMutation(REMOVE_THOUGHT, {
     update(cache, { data: { removeThought } }) {
       try {
@@ -24,19 +23,12 @@ const ThoughtList = ({
           query: QUERY_THOUGHTS,
           data: { thoughts: [removeThought, ...thoughts] },
         });
+        window.location.reload();
       } catch (e) {
         console.error(e);
-      }
-
-      // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, thoughts: [...me.thoughts, removeThought] } },
-      });
+      }      
     },
   });
-
 
 
   if (!thoughts.length) {
@@ -51,62 +43,12 @@ const ThoughtList = ({
           thoughtId: thoughtId,
         },
       });
-      // Perform any additional actions after deleting the thought
-    // } catch (err) {
-    //   console.error(err);
-    // }
   } catch (err) {
     console.error(err);
   }
   };
   
-
-  
-
-
-  return (
-//   <div>
-//   {showTitle && <h3>{title}</h3>}
-//   <Container>
-//     <Row>
-//       {thoughts.map((thought) => (
-//         <Col key={thought._id} lg={4} md={6} sm={12} className="mb-3">
-//           <Card style={{ width: '100%' }}>
-//             <Card.Header className="bg-primary text-light p-2 m-0">
-//               {showUsername ? (
-//                 <Link
-//                   className="text-light"
-//                   to={`/profiles/${thought.thoughtAuthor}`}
-//                 >
-//                   {thought.thoughtAuthor} <br />
-//                   <span style={{ fontSize: '1rem' }}>
-//                     Journal entry from {thought.createdAt}
-//                   </span>
-//                 </Link>
-//               ) : (
-//                 <>
-//                   <span style={{ fontSize: '1rem' }}>
-//                     Journal entry from {thought.createdAt}
-//                   </span>
-//                 </>
-//               )}
-//             </Card.Header>
-//             <Card.Body className="d-flex flex-column bg-light p-2">
-//               <Card.Title>Card title</Card.Title>
-//               <Card.Text className="flex-grow-1 overflow-hidden">
-//                 {thought.thoughtText}
-//               </Card.Text>
-//             </Card.Body>
-//             <Card.Footer>
-//               <Button variant="danger">Delete Button</Button> <br />
-//               <Button variant="info">Update Button</Button>
-//             </Card.Footer>
-//           </Card>
-//         </Col>
-//       ))}
-//     </Row>
-//   </Container>
-// </div>
+return (
 <div>
 {showTitle && <h3>{title}</h3>}
 <Container className='thoughts-container'>
