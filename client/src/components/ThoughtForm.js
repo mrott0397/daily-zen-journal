@@ -93,7 +93,7 @@ const ThoughtForm = () => {
               </button>
             </div>
               <div className="col-12 my-3 bg-danger text-white p-3">
-                {`Journal Entry Added!`}
+                {/* {`Journal Entry Added!`} */}
               </div>
             
           </form>

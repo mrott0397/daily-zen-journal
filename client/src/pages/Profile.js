@@ -11,6 +11,7 @@ import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 import { Card } from 'react-bootstrap';
 import profilePic from '../assets/cat-profile-pic.png';
+import catGif from "../assets/lofi-cat.gif";
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -39,34 +40,6 @@ const Profile = () => {
   }
 
   return (
-    // <div>
-    //   <div className="flex-row justify-center ">
-    //     <Container>
-    //       <Row>
-    //         <Col md={4}>
-    //           <div className="text-center">
-    //             <Card.Img src={profilePic} alt="Profile Picture" roundedCircle fluid />
-    //           </div>
-    //         </Col>
-    //         <Col md={8}>
-    //           <p className="mb-4">About Me: {user.aboutMe}</p>
-    //           <h2 className="">Viewing {user.username}'s journal entries. Way to go!</h2>
-    //           <div className="thoughts-container">
-    //             <ThoughtList
-    //               thoughts={user.thoughts}
-    //               title={`${user.username}'s thoughts...`}
-    //               showTitle={false}
-    //               showUsername={false}
-    //             />
-    //           </div>
-    //         </Col>
-    //       </Row>
-    //     </Container>
-    //     {!userParam && (
-    //       <div className="" style={{ border: '1px dotted #1a1a1a' }}></div>
-    //     )}
-    //   </div>
-    // </div>
     <div>
     <div className="flex-row justify-center ">
       <Container>
@@ -78,6 +51,9 @@ const Profile = () => {
           </Col>
           <Col md={8}>
             <div className="about-me-container">
+              <div className="cat-container">
+                <img src={catGif} alt="Animated GIF" />
+              </div>
               <h4 className="about-me-title" >About Me: Likes to pet and cuddle cats</h4>
               <p className="about-me-text">{user.aboutMe}</p>
             </div>
