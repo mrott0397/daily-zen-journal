@@ -65,52 +65,10 @@ const ThoughtList = ({
 
 
   return (
-//   <div>
-//   {showTitle && <h3>{title}</h3>}
-//   <Container>
-//     <Row>
-//       {thoughts.map((thought) => (
-//         <Col key={thought._id} lg={4} md={6} sm={12} className="mb-3">
-//           <Card style={{ width: '100%' }}>
-//             <Card.Header className="bg-primary text-light p-2 m-0">
-//               {showUsername ? (
-//                 <Link
-//                   className="text-light"
-//                   to={`/profiles/${thought.thoughtAuthor}`}
-//                 >
-//                   {thought.thoughtAuthor} <br />
-//                   <span style={{ fontSize: '1rem' }}>
-//                     Journal entry from {thought.createdAt}
-//                   </span>
-//                 </Link>
-//               ) : (
-//                 <>
-//                   <span style={{ fontSize: '1rem' }}>
-//                     Journal entry from {thought.createdAt}
-//                   </span>
-//                 </>
-//               )}
-//             </Card.Header>
-//             <Card.Body className="d-flex flex-column bg-light p-2">
-//               <Card.Title>Card title</Card.Title>
-//               <Card.Text className="flex-grow-1 overflow-hidden">
-//                 {thought.thoughtText}
-//               </Card.Text>
-//             </Card.Body>
-//             <Card.Footer>
-//               <Button variant="danger">Delete Button</Button> <br />
-//               <Button variant="info">Update Button</Button>
-//             </Card.Footer>
-//           </Card>
-//         </Col>
-//       ))}
-//     </Row>
-//   </Container>
-// </div>
+
 <div>
 {showTitle && <h3>{title}</h3>}
-<Container className='thoughts-container'>
-  <Row>
+<div className='thoughts-container'>
     {thoughts.map((thought) => (
       <Col key={thought._id} lg={4} md={6} sm={12} className="mb-3">
         <Card style={{ width: '300px', height: '300px', maxHeight: '300px' }}>
@@ -146,8 +104,7 @@ const ThoughtList = ({
         </Card>
       </Col>
     ))}
-  </Row>
-</Container>
+</div>
 </div>
 );
 };
