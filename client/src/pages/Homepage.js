@@ -10,7 +10,7 @@ function Homepage(props) {
   return (
     <div>
     <br />
-    <h1 style={{textAlign: "center"}}>Welcome to the Daily Zen Journal, a place for you to relax and reflect. 
+    <h1 style={{textAlign: "center"}}>Welcome to your Daily Zen Journal, a place for you to relax and reflect. 
     </h1>
     <br />
     <br />
