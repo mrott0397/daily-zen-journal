@@ -26,12 +26,16 @@ const JournalEntryForm = () => {
             <form className="journal-entry-form">
               <div />
               <h1 style={{ textAlign: "center" }}>Let's Reflect</h1>
-               <ThoughtForm/>      
+              <ThoughtForm />
             </form>
 
             <div className="col-lg-4">
               <div className="cat-container">
-                <Cat size={220} mood="lovestruck" color="#596881" />
+                <Cat
+                  size={220}
+                  mood="lovestruck"
+                  color="#596881"
+                />
                 <div />
               </div>
               <div />
