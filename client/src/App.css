@@ -2,11 +2,11 @@
 
 
 body {
-  background-color: #336e90;
+  background-color: #936b8f
 }
 header {
   display: flex;
-  background-color: #bf6c97;
+  background-color: white;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -14,8 +14,8 @@ header {
 }
 
 header h1 {
-  background-color: #bf6c97;
-  color: black;
+  background-color: white;
+  color:#525695;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.3rem;
   padding: 5px 10px 5px 0%;
@@ -24,28 +24,31 @@ header nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: #bf6c97;
+  background-color: white;
 }
 /* targeting all anchors of the nav  */
 nav a {
-  background-color: #bf6c97;
+  background-color: white;
   margin-right: 15px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: medium;
   text-decoration: underline;
-  color: black;
+  color: #525695;
 }
 /* text directions overides whats already been styled */
 
 .cover {
-  background-image: url(./assets/LoFi-background.jpeg);
-  background-position: 80% 20%;
+  background-image: url(./assets/zen-journal-background.jpg);
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   min-height: 45vh;
   max-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
 }
 main {
   max-width: 90%;
@@ -63,18 +66,58 @@ main {
   flex-basis: 48%; /* Adjust the width as needed */
 }
 
-.journal {
-  padding: 5px 20px;
+/* ------------- LoFi Record -------------- */
+ 
+.journal-row {
+  display: flex;
+  align-items: center;
 }
 
-.journal fieldset {
-  margin: 20px 0;
+.gif-container {
+  flex-shrink: 0;
+  /* flex: 0 0 auto; */
+  margin-right: 30px; /* Adjust the margin as needed */
+}
+
+.gif-container img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.journal-prompts {
+  flex-grow: 1;
+  max-width: 400px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-left: 30px;
+}
+
+.journal {
+  flex: 1;
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rem;
+  max-width: 50%;
+}
+
+.journal-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+journal h1 {
+  text-align: center;
 }
 
 .journal-entry-form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
   margin: 0 auto;
   justify-content: right;
 }
@@ -83,10 +126,8 @@ main {
   font-weight: bold;
   margin-bottom: 5px;
 }
-
-.form-input,
 .form-textarea {
-  width: 100%;
+  width: 75%;
   padding: 8px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
@@ -100,29 +141,97 @@ main {
 
 .form-submit {
   padding: 8px 15px;
-  background-color:  #bf6c97;
+  background-color:  #936b8f;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: black;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
+/* -------------- Journal Cat -------------- */
+.form-container {
+  margin-left: 40px;
+  margin-bottom: 50px;
+}
+
+.cat-container {
+  display: flex;
+ justify-content: right;
+  margin-right: 40px;
+  margin-bottom: 50px;
+ margin-top: 20px;
+}
+
+/* Add these styles to make the "About Me" section cute */
+.profile-pic-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: inline-block;
+  border: 4px solid #da8a8b;
+  border-radius: 50%;
+  padding: 4px;
+}
+.about-me-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  padding-left: 20px;
+  /* border: 2px solid black; */
+
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 35%;
+  
+}
+
+.about-me-title {
+  color: black;
+  font-size: 24px;
+  /* margin-bottom: 10px; */
+  /* text-align: center; */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.about-me-text {
+  color: #525695;
+  font-size: 1rem;
+  
+}
+
+
 
 .thoughts-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; */
 }
 
 
 .card {
-  border: 1px solid #bf6c97;
+  border: 1px solid #da8a8b;
   margin-bottom: 1rem;
+  width: 300px;
+  height: 300px;
+  max-height: 300px;
+  margin: 10px;
+  background-color: white;
 }
+
 
 .card .card-header {
   padding: 0.375rem;
-  background-color: #2d3e50;
+  background-color: #525695;
   color: #d9e9e8;
 }
 
@@ -134,6 +243,29 @@ main {
   border-top: 1px solid #1a1a1a;
   padding: 0.375rem;
 }
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  padding-top: 15px;
+}
+
+/* .card-footer > * {
+  margin-bottom: 10px;
+} */
+.card-footer img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  padding-top: 20px;
+}
+
 
 .card.card-rounded {
   border-radius: 0.3rem;
@@ -141,17 +273,6 @@ main {
 
 .card.card-rounded .card-header {
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
-}
-/* -------------- Journal Cat -------------- */
-.form-container {
-  margin-left: 40px;
-  margin-bottom: 50px;
-}
-
-.cat-container {
-  display: flex;
-  align-items: left;
-  
 }
 
 .form-button:hover {
@@ -170,7 +291,7 @@ main {
 }
 
 .cute-textbox {
-  background-color: #bf6c97;
+  background-color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 8px;
   margin-top: 16px;
@@ -198,6 +319,15 @@ main {
   justify-content: center;
   padding: 5px 20px;
 }
+
+
+.rowchange {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 15px;
+} 
 
 .page-section {
   display: flex;
@@ -246,7 +376,7 @@ a:hover {
 @media screen and (max-width: 992px) {
   /* Change the header color */
   header {
-    background: #bf6c97;
+    background: white;
   }
 }
 
@@ -261,16 +391,20 @@ a:hover {
   }
   /* Change the header color */
   header {
-    background: #bf6c97;
+    background: #da8a8b;
   }
   header h1 {
-    background: #bf6c97;
+    background:#da8a8b;
   }
   header nav {
-    background: #bf6c97;
+    background: #da8a8b;
   }
   header nav a {
-    background: #bf6c97;
+    background: #da8a8b;
+  }
+  .card {
+    width: 100%;
+    max-width: 300px;
   }
 }
 @media screen and (max-width: 667px) {

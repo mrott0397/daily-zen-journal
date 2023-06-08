@@ -45,6 +45,7 @@ import Header from './Header';
 
 // export default Nav;
 
+
 const AppNavbar = () => {
   // set modal display state
   const [showModal, setShowModal] = useState(false);
@@ -95,13 +96,17 @@ const AppNavbar = () => {
             </Modal.Title>
           {/* </Modal.Header> */}
           <Modal.Body>
-            <Tab.Content>
-              <Tab.Pane eventKey='login'>
+            <Tab.Content className='rowchange'>
+              <div className='col-md-6'>
+              <Tab.Pane  eventKey='login'>
                 <LoginForm handleModalClose={() => setShowModal(false)} />
               </Tab.Pane>
+              </div>
+              <div className='col-md-6'>
               <Tab.Pane eventKey='signup'>
                 <SignUpForm handleModalClose={() => setShowModal(false)} />
               </Tab.Pane>
+              </div>
             </Tab.Content>
           </Modal.Body>
         </Tab.Container>

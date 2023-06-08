@@ -9,6 +9,8 @@ import ThoughtList from '../components/ThoughtList';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
+import { Card } from 'react-bootstrap';
+import profilePic from '../assets/cat-profile-pic.png';
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -38,50 +40,64 @@ const Profile = () => {
 
   return (
     // <div>
-    //   <div className="flex-row justify-center mb-3">
-    //     <h2 className="">
-    //       Viewing {user.username}'s journal entries. Way to go!
-    //     </h2>
-        
-
-    //     <div className="col-3 col-md-3 mb-5">
-    //       <ThoughtList
-    //         thoughts={user.thoughts}
-    //         title={`${user.username}'s thoughts...`}
-    //         showTitle={false}
-    //         showUsername={false}
-    //       />
-    //     </div>
+    //   <div className="flex-row justify-center ">
+    //     <Container>
+    //       <Row>
+    //         <Col md={4}>
+    //           <div className="text-center">
+    //             <Card.Img src={profilePic} alt="Profile Picture" roundedCircle fluid />
+    //           </div>
+    //         </Col>
+    //         <Col md={8}>
+    //           <p className="mb-4">About Me: {user.aboutMe}</p>
+    //           <h2 className="">Viewing {user.username}'s journal entries. Way to go!</h2>
+    //           <div className="thoughts-container">
+    //             <ThoughtList
+    //               thoughts={user.thoughts}
+    //               title={`${user.username}'s thoughts...`}
+    //               showTitle={false}
+    //               showUsername={false}
+    //             />
+    //           </div>
+    //         </Col>
+    //       </Row>
+    //     </Container>
     //     {!userParam && (
-    //       <div
-    //         className="col-12 col-md-10 mb-3 p-3"
-    //         style={{ border: '1px dotted #1a1a1a' }}
-    //       >
-    //       </div>
+    //       <div className="" style={{ border: '1px dotted #1a1a1a' }}></div>
     //     )}
     //   </div>
     // </div>
     <div>
-      <div className="flex-row justify-center ">
-        <h2 className="">
-          Viewing {user.username}'s journal entries. Way to go!
-        </h2>
-        <div className="thoughts-container">
-          <ThoughtList
-            thoughts={user.thoughts}
-            title={`${user.username}'s thoughts...`}
-            showTitle={false}
-            showUsername={false}
-          />
-        </div>
-        {!userParam && (
-          <div
-            className=""
-            style={{ border: '1px dotted #1a1a1a' }}
-          ></div>
-        )}
-      </div>
+    <div className="flex-row justify-center ">
+      <Container>
+        <Row>
+          <Col md={4} className="text-center" >
+            <div className="profile-pic-container">
+              <Card.Img src={profilePic} alt="Profile Picture" roundedCircle fluid className="profile-pic" />
+            </div>
+          </Col>
+          <Col md={8}>
+            <div className="about-me-container">
+              <h4 className="about-me-title" >About Me: Likes to pet and cuddle cats</h4>
+              <p className="about-me-text">{user.aboutMe}</p>
+            </div>
+            <h2 className="viewing">Viewing {user.username}'s journal entries. Way to go!</h2>
+            <div className="thoughts-container">
+              <ThoughtList
+                thoughts={user.thoughts}
+                title={`${user.username}'s thoughts...`}
+                showTitle={false}
+                showUsername={false}
+              />
+            </div>
+          </Col>
+        </Row>
+      </Container>
+      {!userParam && (
+        <div className="" style={{ border: '1px dotted #1a1a1a' }}></div>
+      )}
     </div>
+  </div>
   );
 };
 
