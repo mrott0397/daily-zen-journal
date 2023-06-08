@@ -111,6 +111,50 @@ main {
   cursor: pointer;
 }
 
+/* Add these styles to make the "About Me" section cute */
+.profile-pic-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: inline-block;
+  border: 4px solid #da8a8b;
+  border-radius: 50%;
+  padding: 4px;
+}
+.about-me-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  padding-left: 20px;
+  /* border: 2px solid black; */
+
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 35%;
+  
+}
+
+.about-me-title {
+  color: black;
+  font-size: 24px;
+  /* margin-bottom: 10px; */
+  /* text-align: center; */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.about-me-text {
+  color: #525695;
+  font-size: 1rem;
+  
+}
+
+
+
 .thoughts-container {
   display: flex;
   flex-wrap: wrap;
@@ -158,6 +202,7 @@ main {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+  padding-top: 15px;
 }
 
 /* .card-footer > * {
@@ -167,6 +212,7 @@ main {
   width: 50px;
   height: 50px;
   object-fit: cover;
+  padding-top: 20px;
 }
 
 
@@ -234,7 +280,8 @@ main {
   padding: 5px 20px;
 }
 
-.row-change {
+
+.rowchange {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
