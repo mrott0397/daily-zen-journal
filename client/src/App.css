@@ -234,12 +234,12 @@ main {
   padding: 5px 20px;
 }
 
-/* .row {
+.row-change {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   margin-bottom: 15px;
-} */
+}
 
 .page-section {
   display: flex;
