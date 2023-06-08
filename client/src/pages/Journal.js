@@ -23,11 +23,13 @@ const JournalEntryForm = () => {
         <img src={myGif} alt="Animated GIF" />
       </div>
       </div>
+      <div className="journal-wrapper">
       <div className="journal">
         <form className="journal-form">
-          <h1 style={{ textAlign: "center" }}>Let's Reflect</h1>
+          <h1 style={{ textAlign: "center" }}>Journal Away!</h1>
           <ThoughtForm />
         </form>
+      </div>
       </div>
     </div>
     <div className="cat-container">
