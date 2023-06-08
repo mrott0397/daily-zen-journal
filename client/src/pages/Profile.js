@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import ThoughtForm from '../components/ThoughtForm';
 import ThoughtList from '../components/ThoughtList';
@@ -36,6 +37,30 @@ const Profile = () => {
   }
 
   return (
+    // <div>
+    //   <div className="flex-row justify-center mb-3">
+    //     <h2 className="">
+    //       Viewing {user.username}'s journal entries. Way to go!
+    //     </h2>
+        
+
+    //     <div className="col-3 col-md-3 mb-5">
+    //       <ThoughtList
+    //         thoughts={user.thoughts}
+    //         title={`${user.username}'s thoughts...`}
+    //         showTitle={false}
+    //         showUsername={false}
+    //       />
+    //     </div>
+    //     {!userParam && (
+    //       <div
+    //         className="col-12 col-md-10 mb-3 p-3"
+    //         style={{ border: '1px dotted #1a1a1a' }}
+    //       >
+    //       </div>
+    //     )}
+    //   </div>
+    // </div>
     <div>
       <div className="flex-row justify-center ">
         <h2 className="">
@@ -53,8 +78,7 @@ const Profile = () => {
           <div
             className=""
             style={{ border: '1px dotted #1a1a1a' }}
-          >
-          </div>
+          ></div>
         )}
       </div>
     </div>
