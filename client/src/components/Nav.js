@@ -9,6 +9,7 @@ import Auth from '../utils/auth';
 import Homepage from '../pages/Homepage';
 import Journal from '../pages/Journal';
 import Profile from '../pages/Profile';
+import Header from './Header';
 // import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 // import SignUpForm from './SignupForm';
 // import LoginForm from './Logincard';
