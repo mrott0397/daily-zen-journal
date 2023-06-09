@@ -58,7 +58,7 @@ const Profile = () => {
               <p className="about-me-text">{user.aboutMe}Likes Cats a lot</p>
             </div>
             <h2 className="viewing">Viewing {user.username}'s journal entries. Way to go!</h2>
-            <div className="thoughts-container">
+            <div className="thoughts-container thoughts-card-container">
               <ThoughtList
                 thoughts={user.thoughts}
                 title={`${user.username}'s thoughts...`}
@@ -70,7 +70,7 @@ const Profile = () => {
         </Row>
       </Container>
       {!userParam && (
-        <div className="" style={{ border: '1px dotted #1a1a1a' }}></div>
+        <div className="" style={{ border: '1px solid black' }}></div>
       )}
     </div>
   </div>
