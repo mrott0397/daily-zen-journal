@@ -22,7 +22,7 @@ function Homepage(props) {
       <h2 className="qoute" style={{textAlign: "center"}}>“Wellness starts with a positive mindset and a commitment to change.” - Unknown</h2>
       </div>
   </div>
-  <Footer/>
+  <Footer className="homepage-footer"/>
   </div>
   );
 }
