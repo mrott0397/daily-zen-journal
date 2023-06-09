@@ -165,14 +165,14 @@ journal h1 {
 
 .cat-container {
 position: absolute;
-top: 0;
-left: 0;
-z-index: 2;
+top: 11%;
+left: 15%;
+/* z-index: 2; */
 }
 
 .cat-gif {
   max-width: 100%;
-  
+  max-height: 300px;
 }
 
 /* Add these styles to make the "About Me" section cute */
