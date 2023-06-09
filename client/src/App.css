@@ -212,6 +212,8 @@ z-index: 2;
 
 }
 
+
+
 .about-me-text {
   color: #525695;
   font-size: 1rem;
@@ -341,10 +343,28 @@ z-index: 2;
 .rowchange {
 
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
   margin-bottom: 15px;
 } 
+
+.containerrow {
+  flex: 50%;
+  margin-bottom: 15px;
+}
+
+.zenJournalBackground {
+  max-height: 40px;
+  display: flex;
+  flex-direction: column;
+  max-width: 40px;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 5px 20px;
+ 
+}
+
 
 .page-section {
   display: flex;
