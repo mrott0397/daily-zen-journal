@@ -50,7 +50,8 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router >
-        <>
+        <div className="">
+
           <Header />
           {/* <Nav/> */}
             <Routes fluid="true">
@@ -63,8 +64,9 @@ function App() {
               element={<h1 className="display-2">Wrong page!</h1>}
             /> */}
           </Routes>
-        </>
       {/* <Footer /> */}
+      </div>
+
       </Router>
     </ApolloProvider>
   );

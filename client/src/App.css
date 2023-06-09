@@ -167,6 +167,7 @@ journal h1 {
 position: absolute;
 top: 11%;
 left: 15%;
+/* transform: translate(-50%, 0); */
 /* z-index: 2; */
 }
 
@@ -420,7 +421,7 @@ a:hover {
 }
 .profile-footer {
   display: flex;
-  position: absolute;
+  position: are;
   /* min-height: 100%; */
   height: auto;
   bottom: 0;
