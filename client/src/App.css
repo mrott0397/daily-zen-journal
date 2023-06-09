@@ -411,6 +411,23 @@ a:hover {
   opacity: 0.5;
 }
 
+.journal-footer {
+  display: flex;
+  position: fixed;
+  /* min-height: 100%; */
+  bottom: 0;
+  justify-content: center;
+  border-top: 1px #1a1a1a;
+}
+.profile-footer {
+  display: flex;
+  position: absolute;
+  /* min-height: 100%; */
+  height: auto;
+  bottom: 0;
+  justify-content: center;
+}
+
 
 @media screen and (max-width: 992px) {
   /* Change the header color */

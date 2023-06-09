@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { Container, Row, Col } from 'react-bootstrap';
+import Footer from '../components/Footer';
 
 import ThoughtForm from '../components/ThoughtForm';
 import ThoughtList from '../components/ThoughtList';
@@ -69,10 +70,8 @@ const Profile = () => {
           </Col>
         </Row>
       </Container>
-      {!userParam && (
-        <div className="" style={{ border: '1px solid #1a1a1a' }}></div>
-      )}
     </div>
+      <Footer className="profile-footer"/>
   </div>
   );
 };

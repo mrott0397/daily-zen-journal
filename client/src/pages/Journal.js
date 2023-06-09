@@ -10,6 +10,7 @@ import myGif from "../assets/lofi-record.gif";
 import catGif from "../assets/lofi-cat.gif";
 
 import { QUERY_THOUGHTS } from "../utils/queries";
+import Footer from "../components/Footer";
 
 const JournalEntryForm = () => {
   const { loading, data } = useQuery(QUERY_THOUGHTS);
@@ -30,12 +31,10 @@ const JournalEntryForm = () => {
               <h1 style={{ textAlign: "center" }}>Journal Away!</h1>
               <ThoughtForm />
             </form>
-              {/* <div className="cat-container">
-                <img src={catGif} alt="Animated GIF" />
-              </div> */}
           </div>
         </div>
       </div>
+      <Footer className="journal-footer" />
     </div>
   );
 };
