@@ -12,6 +12,12 @@ const ThoughtForm = () => {
 
   const [characterCount, setCharacterCount] = useState(0);
 
+  const [showMessage, setShowMessage] = useState(false);
+  const handleButtonClick = () => {
+    setShowMessage(true);
+    window.location.reload();
+  };
+
   const [addThought, { error }] = useMutation(ADD_THOUGHT, {
     update(cache, { data: { addThought } }) {
       try {
@@ -88,13 +94,15 @@ const ThoughtForm = () => {
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+              <button className="btn btn-primary btn-block py-3" type="submit" onClick={handleButtonClick}>
                 Add Thought
               </button>
-            </div>
+              {showMessage && (
               <div className="col-12 my-3 bg-danger text-white p-3">
-                {/* {`Journal Entry Added!`} */}
+                Journal Entry Added!
               </div>
+              )}
+            </div>
             
           </form>
         </>
