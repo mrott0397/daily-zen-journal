@@ -140,23 +140,23 @@ return (
                       thought.thoughtText
                     )}
                   </Card.Text>
-                  <Card.Footer className='card-footer'>
+                  <Card.Footer className="d-flex justify-content-between">
                     {editThoughtId === thought._id ? (
-                      <Button
+                      <Button className='thought-button'
                         variant="success"
                         onClick={() => handleSaveThought(thought._id)}
                       >
                         Save
                       </Button>
                     ) : (
-                      <Button
+                      <Button className='thought-button'
                         variant="info"
                         onClick={() => handleUpdateThought(thought._id)}
                       >
                         Update
                       </Button>
                     )}
-                    <Button
+                    <Button className='thought-button'
                       variant="danger"
                       onClick={() => handleDeleteThought(thought._id)}
                     >
