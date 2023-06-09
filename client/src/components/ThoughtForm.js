@@ -15,7 +15,9 @@ const ThoughtForm = () => {
   const [showMessage, setShowMessage] = useState(false);
   const handleButtonClick = () => {
     setShowMessage(true);
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   };
 
   const [addThought, { error }] = useMutation(ADD_THOUGHT, {
