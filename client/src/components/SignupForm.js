@@ -3,6 +3,8 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation} from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
+import signUpImage from '../assets/journalicon.png'
+
 
 import Auth from '../utils/auth';
 
@@ -54,8 +56,11 @@ const SignupForm = () => {
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your signup!
         </Alert>
-
+        <div className='signin-image'>
+        <img src={signUpImage} alt='sign in' className='zenJournalBackground' />
+      </div>
         <h2 className='signup'>-- Sign Up Here --</h2>
+       
 
         <Form.Group className='mb-3 signup '>
           <Form.Label htmlFor='username'>Username:</Form.Label>
