@@ -53,6 +53,7 @@ nav a {
 main {
   max-width: 90%;
   margin: 20px auto 45px auto;
+  margin-bottom: 0px;
 }
 .qoute {
   font-family: 'Playfair Display', serif;
@@ -164,15 +165,13 @@ journal h1 {
 
 .cat-container {
 position: absolute;
-top: 11%;
-left: 15%;
-/* transform: translate(-50%, 0); */
-/* z-index: 2; */
+top: 0;
+left: 0;
+z-index: 2;
 }
 
 .cat-gif {
   max-width: 100%;
-  max-height: 300px;
   
 }
 
@@ -227,7 +226,6 @@ left: 15%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  position: relative;
 }
 .row-cols-3 .col {
   flex-basis: calc(33.33% - 20px); /* Adjust the width and margin as needed */
@@ -237,10 +235,10 @@ left: 15%;
 
 
 /* ------------- Thought Cards ---------- */
-/* .thought-card-container {
+.thought-card-container {
   position: relative;
   z-index: 1;
-} */
+}
 .card {
   border: 1px solid #da8a8b;
   margin-bottom: 1rem;

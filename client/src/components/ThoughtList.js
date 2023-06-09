@@ -140,7 +140,7 @@ return (
                       thought.thoughtText
                     )}
                   </Card.Text>
-                  <Card.Footer>
+                  <Card.Footer className='card-footer'>
                     {editThoughtId === thought._id ? (
                       <Button
                         variant="success"
