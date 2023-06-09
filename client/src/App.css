@@ -53,6 +53,7 @@ nav a {
 main {
   max-width: 90%;
   margin: 20px auto 45px auto;
+  margin-bottom: 0px;
 }
 .qoute {
   font-family: 'Playfair Display', serif;
@@ -163,11 +164,10 @@ journal h1 {
 }
 
 .cat-container {
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: right;
-  margin-right: 30px;
+position: absolute;
+top: 0;
+left: 0;
+z-index: 2;
 }
 
 .cat-gif {
@@ -235,6 +235,10 @@ journal h1 {
 
 
 /* ------------- Thought Cards ---------- */
+.thought-card-container {
+  position: relative;
+  z-index: 1;
+}
 .card {
   border: 1px solid #da8a8b;
   margin-bottom: 1rem;
