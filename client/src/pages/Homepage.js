@@ -3,6 +3,7 @@ import React from "react";
 import LoginForm from "../components/Logincard";
 import Header from "../components/Header";
 import SignupForm from "../components/SignupForm";
+import Footer from "../components/Footer";
 // import './homepage.css'
 
 function Homepage(props) {
@@ -21,6 +22,7 @@ function Homepage(props) {
       <h2 className="qoute" style={{textAlign: "center"}}>“Wellness starts with a positive mindset and a commitment to change.” - Unknown</h2>
       </div>
   </div>
+  <Footer/>
   </div>
   );
 }
