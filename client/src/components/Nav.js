@@ -6,45 +6,6 @@ import LoginForm from './Logincard';
 import '../App.css'
 
 import Auth from '../utils/auth';
-import Homepage from '../pages/Homepage';
-import Journal from '../pages/Journal';
-import Profile from '../pages/Profile';
-import Header from './Header';
-// import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-// import SignUpForm from './SignupForm';
-// import LoginForm from './Logincard';
-// import Auth from '../utils/auth';
-
-// function AppNavbar({ currentPage, handlePageChange}) {
-//     return (
-//         <>
-// <nav>
-  
-//   <a href="#Profile"
-//   onClick={() => handlePageChange("Profile")}
-//   className={
-//     currentPage === "Profile" ? "nav-link active" : "nav-link"
-//   }
-//   >Profile</a>
-//   <a href="#Journal"
-//   onClick={() => handlePageChange("Journal")}
-//   className={
-//     currentPage === "Journal" ? "nav-link active" : "nav-link"
-//   }
-//   >Journal</a>
-//   <a href="#Home-page"
-//   onClick={() => handlePageChange("Homepage")}
-//   className={
-//     currentPage === "Homepage" ? "nav-link active" : "nav-link"
-//   }
-//      >Home</a>
-// </nav> 
-// </>
-//     );
-//     }
-
-// export default Nav;
-
 
 const AppNavbar = () => {
   // set modal display state
@@ -86,12 +47,6 @@ const AppNavbar = () => {
           {/* <Modal.Header closeButton> */}
             <Modal.Title id='signup-modal'>
               <Nav variant='pills'>
-                {/* <Nav.Item>
-                  <Nav.Link eventKey='login'>Login</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
-                </Nav.Item> */}
               </Nav>
             </Modal.Title>
           {/* </Modal.Header> */}

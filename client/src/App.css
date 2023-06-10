@@ -1,9 +1,22 @@
-
-
-
 body {
-  background-color: #936b8f
+  background-color: #936b8f;
 }
+
+#root {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* min-height: 100vh;  */
+  flex: 1;
+}
+
+.app-container {
+  text-align: center;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   display: flex;
   background-color: white;
@@ -15,8 +28,8 @@ header {
 
 header h1 {
   background-color: white;
-  color:#525695;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #525695;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.3rem;
   padding: 5px 10px 5px 0%;
 }
@@ -56,7 +69,7 @@ main {
   margin-bottom: 0px;
 }
 .qoute {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 .form-container {
   display: flex;
@@ -68,7 +81,7 @@ main {
 }
 
 /* ------------- LoFi Record -------------- */
- 
+
 .journal-row {
   display: flex;
   align-items: flex-start;
@@ -129,7 +142,6 @@ journal h1 {
   justify-content: center;
 }
 
-
 .form-label {
   font-weight: bold;
   margin-bottom: 5px;
@@ -150,8 +162,8 @@ journal h1 {
 
 .form-submit {
   padding: 8px 15px;
-  background-color:  #936b8f;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #936b8f;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: black;
   border: none;
   border-radius: 4px;
@@ -164,11 +176,11 @@ journal h1 {
 }
 
 .cat-container {
-position: absolute;
-top: 11%;
-left: 15%;
-/* transform: translate(-50%, 0); */
-/* z-index: 2; */
+  position: absolute;
+  top: 11%;
+  left: 15%;
+  /* transform: translate(-50%, 0); */
+  /* z-index: 2; */
 }
 
 .cat-gif {
@@ -201,7 +213,6 @@ left: 15%;
   border-radius: 10px;
   margin-bottom: 20px;
   width: 25%;
-  
 }
 
 .about-me-title {
@@ -209,16 +220,12 @@ left: 15%;
   font-size: 24px;
   /* margin-bottom: 10px; */
   /* text-align: center; */
-  font-family: Georgia, 'Times New Roman', Times, serif;
-
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-
-
 
 .about-me-text {
   color: #525695;
   font-size: 1rem;
-  
 }
 
 .viewing {
@@ -234,8 +241,6 @@ left: 15%;
   flex-basis: calc(33.33% - 20px); /* Adjust the width and margin as needed */
   margin: 10px;
 }
-
-
 
 /* ------------- Thought Cards ---------- */
 .thought-card-container {
@@ -287,7 +292,6 @@ left: 15%;
   padding-top: 20px;
 }
 
-
 .card.card-rounded {
   border-radius: 0.3rem;
 }
@@ -304,7 +308,7 @@ left: 15%;
   display: block;
   margin: 20px auto;
   padding: 8px 16px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: black;
   border: none;
   border-radius: 4px;
@@ -313,13 +317,13 @@ left: 15%;
 
 .cute-textbox {
   background-color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 8px;
   margin-top: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: "Comic Sans MS", cursive;
   font-size: 14px;
 }
 
@@ -341,15 +345,13 @@ left: 15%;
   padding: 5px 20px;
 }
 
-
 .rowchange {
-
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
   margin-bottom: 15px;
-} 
+}
 
 .containerrow {
   flex: 50%;
@@ -364,9 +366,7 @@ left: 15%;
   margin: 0 auto;
   justify-content: center;
   padding: 5px 20px;
- 
 }
-
 
 .page-section {
   display: flex;
@@ -396,7 +396,6 @@ left: 15%;
   justify-content: center;
 }
 
-
 address a {
   display: inline-block;
   margin: 0 0.2rem 0.1rem;
@@ -420,23 +419,24 @@ a:hover {
   border-top: 1px #1a1a1a;
 }
 .profile-footer {
-  display: flex;
-  position: are;
-  /* min-height: 100%; */
-  height: auto;
+  margin-top: auto;
   bottom: 0;
-  justify-content: center;
+  /* display: flex; */
+  /* position: are; */
+  /* min-height: 100%; */
+  /* height: auto;
+  bottom: 0;
+  justify-content: center; */
 }
 
-.homepage-footer {
+/* .homepage-footer {
   display: flex;
   position: fixed;
   /* min-height: 100%; */
-  bottom: 0;
+/* bottom: 0;
   justify-content: center;
-  border-top: 1px #1a1a1a;
-}
-
+  border-top: 1px #1a1a1a; */
+/* } */
 
 @media screen and (max-width: 992px) {
   /* Change the header color */
@@ -444,7 +444,6 @@ a:hover {
     background: white;
   }
 }
-
 
 @media screen and (max-width: 768px) {
   address a {
@@ -459,7 +458,7 @@ a:hover {
     background: #da8a8b;
   }
   header h1 {
-    background:#da8a8b;
+    background: #da8a8b;
   }
   header nav {
     background: #da8a8b;

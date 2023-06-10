@@ -1,13 +1,10 @@
 import "./App.css";
-import React, {useState} from "react";
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-// import Journal from "./components/Journal";
 import Footer from "./components/Footer";
 import Homepage from "./pages/Homepage";
-import Nav from "./components/Nav";
 import Profile from "./pages/Profile";
-import Prompts from "./components/Prompts";
 import {
   ApolloClient,
   InMemoryCache,
@@ -16,13 +13,9 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import Journal from "./pages/Journal";
-import {Planet} from 'react-kawaii';
+import { Planet } from "react-kawaii";
 
-const Example = () => (
- <Planet size={200} mood="blissful" color="#FDA7DC" />
-)
-
-
+const Example = () => <Planet size={200} mood="blissful" color="#FDA7DC" />;
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -44,30 +37,18 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 function App() {
-
   return (
-    <ApolloProvider client={client}>
-      <Router >
-        <div className="">
-
-          <Header />
-          {/* <Nav/> */}
-            <Routes fluid="true">
-            {/* <Route path="/" element={<Homepage />} /> */}
-            <Route path="/" element={<Homepage />} />
-            <Route path="/profile" element={<Profile />} fluid="true" />
-            <Route path="/saved" element={<Journal />} />
-            {/* <Route
-              path="*"
-              element={<h1 className="display-2">Wrong page!</h1>}
-            /> */}
-          </Routes>
-      {/* <Footer /> */}
-      </div>
-
+    <ApolloProvider client={client} className="app-container">
+      <Router>
+        <Header />
+        <Routes fluid="true">
+          <Route path="/" element={<Homepage />} />
+          <Route path="/profile" element={<Profile />} fluid="true" />
+          <Route path="/saved" element={<Journal />} />
+        </Routes>
       </Router>
+      <Footer />
     </ApolloProvider>
   );
 }

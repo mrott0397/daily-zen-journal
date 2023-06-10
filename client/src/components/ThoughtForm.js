@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
 
-import { ADD_THOUGHT } from '../utils/mutations';
-import { QUERY_THOUGHTS, QUERY_ME } from '../utils/queries';
+import { ADD_THOUGHT } from "../utils/mutations";
+import { QUERY_THOUGHTS, QUERY_ME } from "../utils/queries";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const ThoughtForm = () => {
-  const [thoughtText, setThoughtText] = useState('');
+  const [thoughtText, setThoughtText] = useState("");
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -53,7 +53,7 @@ const ThoughtForm = () => {
         },
       });
 
-      setThoughtText('');
+      setThoughtText("");
     } catch (err) {
       console.error(err);
     }
@@ -62,7 +62,7 @@ const ThoughtForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'thoughtText' && value.length <= 280) {
+    if (name === "thoughtText" && value.length <= 280) {
       setThoughtText(value);
       setCharacterCount(value.length);
     }
@@ -70,12 +70,11 @@ const ThoughtForm = () => {
 
   return (
     <div>
-
       {Auth.loggedIn() ? (
         <>
           <p
             className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
+              characterCount === 280 || error ? "text-danger" : ""
             }`}
           >
             Character Count: {characterCount}/280
@@ -90,27 +89,30 @@ const ThoughtForm = () => {
                 placeholder="Here's a new thought..."
                 value={thoughtText}
                 className="form-textarea larger-textarea"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}
               ></textarea>
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit" onClick={handleButtonClick}>
+              <button
+                className="btn btn-primary btn-block py-3"
+                type="submit"
+                onClick={handleButtonClick}
+              >
                 Add Thought
               </button>
               {showMessage && (
-              <div className="col-12 my-3 bg-danger text-white p-3">
-                Journal Entry Added!
-              </div>
+                <div className="col-12 my-3 bg-danger text-white p-3">
+                  Journal Entry Added!
+                </div>
               )}
             </div>
-            
           </form>
         </>
       ) : (
         <p>
-          You need to be logged in to share your thoughts. Please{' '}
+          You need to be logged in to share your thoughts. Please{" "}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
