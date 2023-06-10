@@ -14,7 +14,7 @@ const JournalEntryForm = () => {
   const thoughts = data?.thoughts || [];
 
   return (
-    <div className="journal-entry-form container-fluid app-container">
+    <div className="journal-entry-form container-fluid">
       <div className="journal-row">
         <div className="journal-prompts">
           <Prompts />

@@ -2,21 +2,7 @@ body {
   background-color: #936b8f;
 }
 
-#root {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  /* min-height: 100vh;  */
-  flex: 1;
-}
-
-.app-container {
-  text-align: center;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-}
-
+/* -------------- Header -------------- */
 header {
   display: flex;
   background-color: white;
@@ -272,7 +258,7 @@ journal h1 {
 }
 
 .card .card-footer {
-  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px dashed #1a1a1a;
   padding: 0.375rem;
 }
 .card-footer {
@@ -427,34 +413,7 @@ a:hover {
   text-align: center;
 }
 
-.journal-footer {
-  display: flex;
-  position: fixed;
-  /* min-height: 100%; */
-  bottom: 0;
-  justify-content: center;
-  border-top: 1px #1a1a1a;
-}
-.profile-footer {
-  margin-top: auto;
-  bottom: 0;
-  /* display: flex; */
-  /* position: are; */
-  /* min-height: 100%; */
-  /* height: auto;
-  bottom: 0;
-  justify-content: center; */
-}
-
-/* .homepage-footer {
-  display: flex;
-  position: fixed;
-  /* min-height: 100%; */
-/* bottom: 0;
-  justify-content: center;
-  border-top: 1px #1a1a1a; */
-/* } */
-
+/* -------------- Media Queries -------------- */
 @media screen and (max-width: 992px) {
   /* Change the header color */
   header {

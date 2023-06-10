@@ -36,7 +36,7 @@ const Profile = () => {
   }
 
   return (
-    <div className="app-container">
+    <div>
       <div className="flex-row justify-center ">
         <Container>
           <Row>
