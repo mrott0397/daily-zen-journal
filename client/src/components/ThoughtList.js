@@ -123,20 +123,7 @@ const ThoughtList = ({
                   </>
                 )}
               </Card.Header>
-              <Card.Body className="d-flex flex-column bg-light p-2">
-                <Card.Title></Card.Title>
-                <Card.Text className="text-truncate">
-                  {editThoughtId === thought._id ? (
-                    <Form.Control
-                      name="thoughtText"
-                      value={userFormData.thoughtText}
-                      onChange={handleInputChange}
-                    />
-                  ) : (
-                    thought.thoughtText
-                  )}
-                </Card.Text>
-                <Card.Footer className="d-flex justify-content-between">
+              <Card.Footer >
                   {editThoughtId === thought._id ? (
                     <Button
                       className="thought-button"
@@ -162,6 +149,45 @@ const ThoughtList = ({
                     Delete
                   </Button>
                 </Card.Footer>
+              <Card.Body className="d-flex flex-column bg-light p-2">
+                <Card.Title></Card.Title>
+                <Card.Text className="text-truncate">
+                  {editThoughtId === thought._id ? (
+                    <Form.Control
+                      name="thoughtText"
+                      value={userFormData.thoughtText}
+                      onChange={handleInputChange}
+                    />
+                  ) : (
+                    thought.thoughtText
+                  )}
+                </Card.Text>
+                {/* <Card.Footer className="d-flex justify-content-between">
+                  {editThoughtId === thought._id ? (
+                    <Button
+                      className="thought-button"
+                      variant="success"
+                      onClick={() => handleSaveThought(thought._id)}
+                    >
+                      Save
+                    </Button>
+                  ) : (
+                    <Button
+                      className="thought-button"
+                      variant="info"
+                      onClick={() => handleUpdateThought(thought._id)}
+                    >
+                      Update
+                    </Button>
+                  )}
+                  <Button
+                    className="thought-button"
+                    variant="danger"
+                    onClick={() => handleDeleteThought(thought._id)}
+                  >
+                    Delete
+                  </Button>
+                </Card.Footer> */}
               </Card.Body>
             </Card>
           </Col>

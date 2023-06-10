@@ -237,6 +237,10 @@ journal h1 {
   flex-wrap: wrap;
   justify-content: center;
 }
+.thought-button{
+  margin-left: 10px;
+}
+
 .row-cols-3 .col {
   flex-basis: calc(33.33% - 20px); /* Adjust the width and margin as needed */
   margin: 10px;
@@ -273,10 +277,10 @@ journal h1 {
 }
 .card-footer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
-  padding: 0;
+  justify-content: center;
+  padding: 2rem;
 }
 .button-container {
   display: flex;
@@ -408,6 +412,19 @@ address a {
 a:hover {
   background-color: #a16b56;
   opacity: 0.5;
+}
+
+/* -------------- Footer -------------- */
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #936b8f;
+  width: 100%;
+
+}
+.footer-text{
+  text-align: center;
 }
 
 .journal-footer {
