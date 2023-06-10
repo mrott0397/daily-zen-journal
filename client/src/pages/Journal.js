@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Prompts from "../components/Prompts";
-import { SAVE_ENTRY } from "../utils/mutations";
-import { useMutation } from "@apollo/client";
 import { Cat } from "react-kawaii";
 import { useQuery } from "@apollo/client";
-import ThoughtList from "../components/ThoughtList";
 import ThoughtForm from "../components/ThoughtForm";
 import myGif from "../assets/lofi-record.gif";
 import catGif from "../assets/lofi-cat.gif";
@@ -17,7 +14,7 @@ const JournalEntryForm = () => {
   const thoughts = data?.thoughts || [];
 
   return (
-    <div className="journal-entry-form container-fluid">
+    <div className="journal-entry-form container-fluid app-container">
       <div className="journal-row">
         <div className="journal-prompts">
           <Prompts />
@@ -34,7 +31,7 @@ const JournalEntryForm = () => {
           </div>
         </div>
       </div>
-      <Footer className="journal-footer" />
+      {/* <Footer className="journal-footer" /> */}
     </div>
   );
 };
