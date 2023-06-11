@@ -15,14 +15,18 @@ This is a simple journaling app that allows users to create entries and view the
 
 ## Installation
 
-The following dependencies are required to run this app:
+Techologies used:
 
-``` bootstrap, express, express-handlebars, express-session, mysql2, passport, passport-local, sequelize, bcryptjs, dotenv ```
+``` React, Expressjs, Nodejs, JWT, Graphql, react-kawaii, bootstrap, mongoose, @apollo/client, apollo-server-express ```
 
+To install necessary dependencies, run the following command:
 
-
+``` npm install ```
 
 ## Usage
+ To run the app, run the following command:
+
+``` npm start ```
 
 
 ## License
@@ -32,10 +36,31 @@ The following dependencies are required to run this app:
 
 ## Features
 
+* Users can create an account and log in and out
+* Users can create, edit, and delete journal entries
+* Users can view a list of their entries
+* Users can view a list of daily journaling prompts
+* Users can see the date of their entries
+
 
 
 ## Screenshots
 
+![Screenshot of Daily Zen Journal](./client/src/assets/mainpage.PNG)
+
+![Screenshot of Daily Zen Journal](./client/src/assets/loginandsignup.PNG)
+
+![Screenshot of Daily Zen Journal](./client/src/assets/profilepage2.PNG)
+
+![Screenshot of Daily Zen Journal](./client/src/assets/journalpage.PNG)
+
+
 
 
 ## Contact
+
+* Project Github: https://github.com/mrott0397/daily-zen-journal
+- Natasha Lewis: nlewis742 Email: nlackas12@gmail.com
+- Jacob Zea: JacobZ96 Email: Jacobzea96@gmail.com
+- Jen Roberson: jrob02180 Email: jrob02180@gmail.com
+- Morgan Rott: mrott0397 Email: todo978@gmail.com
