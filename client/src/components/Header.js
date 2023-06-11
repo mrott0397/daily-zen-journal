@@ -1,5 +1,7 @@
 import AppNavbar from "./Nav";
 
+// Header component
+
 function Header() {
   return (
     <header>

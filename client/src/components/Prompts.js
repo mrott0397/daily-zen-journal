@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+// prompts for journaling
+
 const  SeededPrompts = () => {
   const prompts = [
     'Write about a happy memory.',
@@ -19,6 +21,7 @@ const  SeededPrompts = () => {
     "Discuss a personal value or belief that is important to you. Explain why it holds significance in your life and how it guides your decisions and actions."
   ];
 
+  // generate random prompt
   
 
   const [randomPrompt, setRandomPrompt] = useState('');
@@ -32,6 +35,8 @@ const  SeededPrompts = () => {
     const selectedPrompt = prompts[randomPrompt];
     setRandomPrompt(selectedPrompt);
   };
+
+  // return random prompt
 
   return (
     <div className='textcenter'>

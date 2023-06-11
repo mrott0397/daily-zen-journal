@@ -17,9 +17,13 @@ import { Planet } from "react-kawaii";
 
 const Example = () => <Planet size={200} mood="blissful" color="#FDA7DC" />;
 
+//this is the apollo client
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
+
+//this is the auth link
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");

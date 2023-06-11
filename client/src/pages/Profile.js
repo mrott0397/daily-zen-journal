@@ -9,6 +9,7 @@ import { Card } from "react-bootstrap";
 import profilePic from "../assets/cat-profile-pic.png";
 import catGif from "../assets/lofi-cat.gif";
 
+
 const Profile = () => {
   const { username: userParam } = useParams();
 
