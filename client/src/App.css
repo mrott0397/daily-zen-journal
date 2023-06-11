@@ -413,11 +413,18 @@ a:hover {
   text-align: center;
 }
 
+Modal {
+  min-height: 100vh;
+}
+
 /* -------------- Media Queries -------------- */
 @media screen and (max-width: 992px) {
   /* Change the header color */
   header {
     background: white;
+  }
+  .larger-textarea {
+    width: 100%; /* Adjust the width as needed */
   }
 }
 
@@ -446,6 +453,13 @@ a:hover {
     width: 100%;
     max-width: 300px;
   }
+  .journal-row {
+    flex-direction: row;
+  }
+  .larger-textarea {
+    width: 100%; /* Adjust the width as needed */
+  }
+
 }
 @media screen and (max-width: 667px) {
   .page-section p {
