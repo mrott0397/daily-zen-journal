@@ -79,7 +79,6 @@ const SignupForm = () => {
         <h2 className="signup">-- Sign Up Here --</h2>
         
 
-        // form inputs
 
         <Form.Group className="mb-3 signup ">
           <Form.Label htmlFor="username">Username:</Form.Label>

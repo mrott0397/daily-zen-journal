@@ -64,3 +64,6 @@ To install necessary dependencies, run the following command:
 - Jacob Zea: JacobZ96 Email: Jacobzea96@gmail.com
 - Jen Roberson: jrob02180 Email: jrob02180@gmail.com
 - Morgan Rott: mrott0397 Email: todo978@gmail.com
+
+## Deployed Link
+
