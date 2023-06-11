@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Prompts from "../components/Prompts";
-import { Cat } from "react-kawaii";
 import { useQuery } from "@apollo/client";
 import ThoughtForm from "../components/ThoughtForm";
 import myGif from "../assets/lofi-record.gif";
-import catGif from "../assets/lofi-cat.gif";
+
 
 import { QUERY_THOUGHTS } from "../utils/queries";
 import Footer from "../components/Footer";
+
+// this is the journal entry form page
 
 const JournalEntryForm = () => {
   const { loading, data } = useQuery(QUERY_THOUGHTS);
@@ -31,8 +32,7 @@ const JournalEntryForm = () => {
           </div>
         </div>
       </div>
-      {/* <Footer className="journal-footer" /> */}
-    </div>
+      </div>
   );
 };
 

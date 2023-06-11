@@ -7,6 +7,8 @@ import '../App.css'
 
 import Auth from '../utils/auth';
 
+// Navbar component
+
 const AppNavbar = () => {
   // set modal display state
   const [showModal, setShowModal] = useState(false);
