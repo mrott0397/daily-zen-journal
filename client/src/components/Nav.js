@@ -37,7 +37,7 @@ const AppNavbar = () => {
         </Container>
       </Navbar>
       {/* set modal data up */}
-      <Modal
+      <Modal id='modal'
         size='lg'
         show={showModal}
         onHide={() => setShowModal(false)}

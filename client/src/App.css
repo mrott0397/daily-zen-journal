@@ -2,21 +2,7 @@ body {
   background-color: #936b8f;
 }
 
-#root {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  /* min-height: 100vh;  */
-  flex: 1;
-}
-
-.app-container {
-  text-align: center;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-}
-
+/* -------------- Header -------------- */
 header {
   display: flex;
   background-color: white;
@@ -237,6 +223,10 @@ journal h1 {
   flex-wrap: wrap;
   justify-content: center;
 }
+.thought-button{
+  margin-left: 10px;
+}
+
 .row-cols-3 .col {
   flex-basis: calc(33.33% - 20px); /* Adjust the width and margin as needed */
   margin: 10px;
@@ -268,15 +258,15 @@ journal h1 {
 }
 
 .card .card-footer {
-  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px dashed #1a1a1a;
   padding: 0.375rem;
 }
 .card-footer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
-  padding: 0;
+  justify-content: center;
+  padding: 2rem;
 }
 .button-container {
   display: flex;
@@ -410,34 +400,20 @@ a:hover {
   opacity: 0.5;
 }
 
-.journal-footer {
-  display: flex;
+/* -------------- Footer -------------- */
+.footer{
   position: fixed;
-  /* min-height: 100%; */
   bottom: 0;
-  justify-content: center;
-  border-top: 1px #1a1a1a;
+  left: 0;
+  background-color: #936b8f;
+  width: 100%;
+
 }
-.profile-footer {
-  margin-top: auto;
-  bottom: 0;
-  /* display: flex; */
-  /* position: are; */
-  /* min-height: 100%; */
-  /* height: auto;
-  bottom: 0;
-  justify-content: center; */
+.footer-text{
+  text-align: center;
 }
 
-/* .homepage-footer {
-  display: flex;
-  position: fixed;
-  /* min-height: 100%; */
-/* bottom: 0;
-  justify-content: center;
-  border-top: 1px #1a1a1a; */
-/* } */
-
+/* -------------- Media Queries -------------- */
 @media screen and (max-width: 992px) {
   /* Change the header color */
   header {
