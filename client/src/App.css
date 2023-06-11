@@ -419,10 +419,6 @@ a:hover {
   text-align: center;
 }
 
-Modal {
-  min-height: 100vh;
-}
-
 /* -------------- Media Queries -------------- */
 @media screen and (max-width: 992px) {
   /* Change the header color */
