@@ -2,6 +2,8 @@ body {
   background-color: #936b8f;
 }
 
+html,body{overflow-y: scroll; }
+
 /* -------------- Header -------------- */
 header {
   display: flex;
@@ -64,6 +66,10 @@ main {
 
 .form-container .form-wrapper {
   flex-basis: 48%; /* Adjust the width as needed */
+}
+
+.modal{
+  margin-bottom: 75px;
 }
 
 /* ------------- LoFi Record -------------- */
@@ -407,14 +413,10 @@ a:hover {
   left: 0;
   background-color: #936b8f;
   width: 100%;
-
 }
+
 .footer-text{
   text-align: center;
-}
-
-Modal {
-  min-height: 100vh;
 }
 
 /* -------------- Media Queries -------------- */
