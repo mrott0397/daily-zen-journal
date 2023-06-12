@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.7518b0f6.css",
-    "main.js": "/static/js/main.721f100c.js",
+    "main.js": "/static/js/main.828896de.js",
     "static/media/lofi-cat.gif": "/static/media/lofi-cat.340e286f6e20d4351dee.gif",
     "static/media/zen-journal-background.jpg": "/static/media/zen-journal-background.f66bec286ed945a79295.jpg",
     "static/media/cat-profile-pic.png": "/static/media/cat-profile-pic.cef12a32470b6f9183e7.png",
@@ -10,10 +10,10 @@
     "static/media/brand_curious.png": "/static/media/brand_curious.044eaa3b4dfedc6ccc58.png",
     "index.html": "/index.html",
     "main.7518b0f6.css.map": "/static/css/main.7518b0f6.css.map",
-    "main.721f100c.js.map": "/static/js/main.721f100c.js.map"
+    "main.828896de.js.map": "/static/js/main.828896de.js.map"
   },
   "entrypoints": [
     "static/css/main.7518b0f6.css",
-    "static/js/main.721f100c.js"
+    "static/js/main.828896de.js"
   ]
 }
